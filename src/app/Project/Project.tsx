@@ -13,7 +13,7 @@ const Project = () => {
           <Card
             title="N-Pochna | Diet Assistant"
             description="This project is made for educational purposes as a senior project at Kasetsart University Laboratory School Multilingual Program. N'Pochna is a LINE Bot integrated with Edamam API to assist in managing diets and workouts. Made by Nachapat Iamphuang."
-            imageUrl="src\app\Project\N-Pochna.png"
+            imageUrl="public\Project\N-Pochna.png"
             pageLink="https://github.com/SeanNachapat/N-Pochna"
             tags={["Javascript", "Node.js", "LINE", "RapidAPI", "Ngrok"]}
           />

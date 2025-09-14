@@ -9,8 +9,8 @@ const PageNotFound = () => {
         <h2 className="text-7xl font-bold mb-4">Σ(OДOᵕ)</h2>
         <p className="py-4">404 | Page not Found.</p>
         <a
-          href="/about"
-          className="flex outline outline-white rounded-full p-2 hover:scale-105 transition-all"
+          href="/"
+          className="flex outline outline-white rounded-full p-2 hover:scale-110 transition-all"
         >
           Return
         </a>

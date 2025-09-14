@@ -47,21 +47,22 @@ const About = () => {
         <div className="mt-7">
           <h2 className="font-bold text-xl mb-3">Experiences</h2>
           <div className="bg-raisinBlack flex flex-col gap-1 bg-theme-secondary p-4 my-5 rounded-2xl hover:scale-105 transition-transform">
-            <h3 className="font-bold text-base">
-              Video Editor and Content Creator
-            </h3>
+            <h3 className="font-bold text-base">Teaching Assistant</h3>
             <div className="flex font-light justify-between text-sm text-gray-400">
-              <a className="underline" href="">
-                Micrubik
+              <a
+                className="underline"
+                href="https://www.science.kmitl.ac.th/department/computer-science"
+                target="_blank"
+              >
+                Department of Computer Science, KMITL
               </a>
               <p className="justify-end">2025 - present</p>
             </div>
             <ul className="text-sm text-gray-400 list-disc pl-4 text-justify">
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur ut nisl diam. Sed iaculis egestas velit. Nulla in dui
-                nec dui varius vulputate sed ut nunc. Curabitur iaculis nulla
-                libero, at lacinia lectus malesuada ut.
+                Volunteered as a lecturer to lead a 5-day lecture for 30 high
+                school students, about object-oriented programming (OOP) and
+                fundamental Java programming.
               </li>
             </ul>
           </div>
@@ -71,17 +72,19 @@ const About = () => {
               Video Editor and Content Creator
             </h3>
             <div className="flex font-light justify-between text-sm text-gray-400">
-              <a className="underline" href="">
+              <a
+                className="underline"
+                href="https://www.youtube.com/@micrubik/shorts"
+                target="_blank"
+              >
                 Micrubik
               </a>
-              <p className="justify-end">2025 - present</p>
+              <p className="justify-end">2024 - present</p>
             </div>
             <ul className="text-sm text-gray-400 list-disc pl-4 text-justify">
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur ut nisl diam. Sed iaculis egestas velit. Nulla in dui
-                nec dui varius vulputate sed ut nunc. Curabitur iaculis nulla
-                libero, at lacinia lectus malesuada ut.
+                Delivered script-written and edited 50+ short-form video
+                contents for clients and Micrubik.
               </li>
             </ul>
           </div>

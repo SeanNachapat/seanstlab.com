@@ -6,10 +6,7 @@ const Navbar = () => {
   return (
     <nav className="bg-night font-JetBrain sticky">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a
-          href="/about"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
+        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="text-base self-center font-semibold whitespace-nowrap text-white">
             Seanst._
           </span>
@@ -45,7 +42,7 @@ const Navbar = () => {
           <ul className="text-base flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
               <a
-                href="/about"
+                href="/"
                 className="block py-2 px-3 rounded-sm md:bg-transparent md:p-0 dark:text-white md:hover:font-extrabold hover:underline"
                 aria-current="page"
               >

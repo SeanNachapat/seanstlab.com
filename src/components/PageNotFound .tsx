@@ -1,12 +1,10 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 
 const PageNotFound = () => {
   return (
-    <div className="sticky text-white font-JetBrain">
+    <body className="sticky text-white font-JetBrain">
       <div className="bg-night flex flex-col w-screen h-screen mx-auto justify-center items-center fixed">
-        <h2 className="text-7xl font-bold mb-4">Σ(OДOᵕ)</h2>
+        <h2 className="text-7xl font-bold mb-4 animate-bounce">Σ(OДOᵕ)</h2>
         <p className="py-4">404 | Page not Found.</p>
         <a
           href="/"
@@ -15,9 +13,7 @@ const PageNotFound = () => {
           Return
         </a>
       </div>
-      <Navbar />
-      <Footer />
-    </div>
+    </body>
   );
 };
 export default PageNotFound;

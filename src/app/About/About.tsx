@@ -1,11 +1,8 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 
 const About = () => {
   return (
-    <div className="bg-night text-white font-JetBrain">
-      <Navbar />
+    <body className="bg-night text-white font-JetBrain">
       <div className=" flex flex-col max-w-[600px] min-h-screen mx-auto p-7">
         <div className="flex flex-col mx-auto items-center">
           <img
@@ -13,7 +10,7 @@ const About = () => {
             src="https://avatars.githubusercontent.com/u/61649121?v=4"
           ></img>
           <p className="text-xl font-bold">Nachapat Iamphuang</p>
-          <p className="text-base mb-2 text-gray-400">Developer / Filmaker</p>
+          <p className="text-base mb-2 text-gray-400">Developer / Filmmaker</p>
         </div>
         <div className="mt-7">
           <h2 className="font-bold text-xl mb-3">About</h2>
@@ -127,9 +124,7 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </body>
   );
 };
 

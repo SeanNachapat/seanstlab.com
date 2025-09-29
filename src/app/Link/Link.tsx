@@ -2,7 +2,7 @@ import React from "react";
 
 const Link = () => {
   return (
-    <div className="bg-night text-white font-JetBrain">
+    <div className="fixed bg-night text-white font-JetBrain w-screen h-screen">
       <div className=" flex flex-col max-w-[400px] min-h-screen mx-auto justify-center ">
         <h2 className="text-center text-2xl  font-bold pt-5">Links</h2>
         <div className="flex flex-wrap gap-5 items-center text-center justify-center p-5">

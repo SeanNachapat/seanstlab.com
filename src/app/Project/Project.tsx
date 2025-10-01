@@ -1,7 +1,11 @@
 import React from "react";
 import Card from "./Card";
+import { useEffect } from "react";
 
 const Project = () => {
+  useEffect(() => {
+    document.title = "Projects";
+  }, []);
   return (
     <div className="bg-night text-white font-JetBrain">
       <div className="flex flex-col items-center min-h-screen">

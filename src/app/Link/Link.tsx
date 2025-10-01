@@ -1,6 +1,10 @@
 import React from "react";
+import { useEffect } from "react";
 
 const Link = () => {
+  useEffect(() => {
+    document.title = "Links";
+  }, []);
   return (
     <div className="fixed bg-night text-white font-JetBrain w-screen h-screen">
       <div className=" flex flex-col max-w-[400px] min-h-screen mx-auto justify-center ">

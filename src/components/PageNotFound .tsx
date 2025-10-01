@@ -1,6 +1,10 @@
 import React from "react";
+import { useEffect } from "react";
 
 const PageNotFound = () => {
+  useEffect(() => {
+    document.title = "404";
+  }, []);
   return (
     <body className="sticky text-white font-JetBrain">
       <div className="bg-night flex flex-col w-screen h-screen mx-auto justify-center items-center fixed">

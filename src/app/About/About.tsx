@@ -1,6 +1,11 @@
 import React from "react";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    document.title = "Seanstlab";
+  }, []);
+
   return (
     <body className="bg-night text-white font-JetBrain">
       <div className=" flex flex-col max-w-[600px] min-h-screen mx-auto p-7">

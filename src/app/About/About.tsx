@@ -34,6 +34,26 @@ const About = () => {
             </a>
             .
           </p>
+          <p className="text-base text-gray-400 font-thin tracking-wide pt-5">
+            I'm researching the topic of{" "}
+            <a
+              className="font-bold text-white hover:font-extrabold hover:underline"
+              href="https://en.wikipedia.org/wiki/Computational_neuroscience"
+              target="_blank"
+            >
+              Neuroscience
+            </a>{" "}
+            and{" "}
+            <a
+              className="font-bold text-white hover:font-extrabold hover:underline"
+              href="https://www.medtecheurope.org/about-the-industry/what-is-medical-technology/"
+              target="_blank"
+            >
+              Medical Technology
+            </a>{" "}
+            integrated with Machine Learning technology. I'm open to
+            collaborative projects.
+          </p>
           <div className="flex justify-end">
             <a
               className="group hover:underline hover:font-extrabold"

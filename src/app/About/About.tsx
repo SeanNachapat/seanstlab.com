@@ -67,7 +67,21 @@ const About = () => {
           </div>
         </div>
         <div className="mt-7">
-          <h2 className="font-bold text-xl mb-3">Experiences</h2>
+          <h2 className="font-bold text-xl mb-3">My Videos</h2>
+          <div className="flex grid-cols-3">
+            <iframe
+              className="aspect-video ..."
+              src="https://www.youtube.com/embed/54MyIO-UOB8"
+            ></iframe>
+          </div>
+        </div>
+        <div className="mt-7">
+          <a className="flex hover:underline " href="/experiences">
+            <h2 className="font-bold text-xl mb-3">Experiences</h2>
+            <span className="material-symbols-outlined text-sm text-gray-400 px-2 pt-1">
+              open_in_new
+            </span>
+          </a>
           <div className="bg-raisinBlack flex flex-col gap-1 bg-theme-secondary p-4 my-5 rounded-2xl hover:scale-105 transition-transform">
             <h3 className="font-bold text-base">Teaching Assistant</h3>
             <div className="flex font-light justify-between text-sm text-gray-400">

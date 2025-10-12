@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import HoverPopUp from "../../components/HoverPopUp";
 
 const About = () => {
   useEffect(() => {
@@ -8,7 +9,7 @@ const About = () => {
 
   return (
     <body className="bg-night text-white font-JetBrain">
-      <div className=" flex flex-col max-w-[600px] min-h-screen mx-auto p-7">
+      <div className="flex flex-col max-w-[600px] min-h-screen mx-auto p-7">
         <div className="flex flex-col mx-auto items-center">
           <img
             className="size-[7rem] rounded-full  m-5 outline-white outline outline-offset-1"
@@ -24,33 +25,21 @@ const About = () => {
             <span className="font-bold text-justify text-white">Sean</span>, a
             passionate developer, and a machine learning enthusiast. Currently,
             a 1st year Computer Science student, Teaching Assistance and
-            Lecturer at{" "}
-            <a
-              className="font-bold text-white hover:font-extrabold hover:underline"
-              href="https://kmitl.ac.th/"
-              target="_blank"
-            >
-              KMITL
-            </a>
-            .
+            Lecturer at <HoverPopUp text="KMITL" link="https://kmitl.ac.th" />.
           </p>
           <p className="text-base text-gray-400 font-thin tracking-wide pt-5">
             I'm researching the topic of{" "}
-            <a
-              className="font-bold text-white hover:font-extrabold hover:underline"
-              href="https://en.wikipedia.org/wiki/Computational_neuroscience"
-              target="_blank"
-            >
-              Neuroscience
-            </a>{" "}
+            <HoverPopUp
+              text="Neuroscience"
+              link="https://en.wikipedia.org/wiki/Computational_neuroscience"
+              embededLink="https://en.wikipedia.org/wiki/Computational_neuroscience"
+            />{" "}
             and{" "}
-            <a
-              className="font-bold text-white hover:font-extrabold hover:underline"
-              href="https://www.medtecheurope.org/about-the-industry/what-is-medical-technology/"
-              target="_blank"
-            >
-              Medical Technology
-            </a>{" "}
+            <HoverPopUp
+              text="Medical Technology"
+              link="https://www.medtecheurope.org/about-the-industry/what-is-medical-technology"
+              embededLink="https://en.wikipedia.org/wiki/Health_technology"
+            />{" "}
             integrated with Machine Learning technology. I'm open to
             collaborative projects.
           </p>
@@ -67,11 +56,28 @@ const About = () => {
           </div>
         </div>
         <div className="mt-7">
-          <h2 className="font-bold text-xl mb-3">My Videos</h2>
-          <div className="flex grid-cols-3">
+          <a className="flex hover:underline " href="/link">
+            <h2 className="font-bold text-xl mb-3">My Videos</h2>
+            <span className="material-symbols-outlined text-sm text-gray-400 px-2 pt-1">
+              open_in_new
+            </span>
+          </a>
+
+          <div className="flex flex-row justify-evenly overflow-x-scroll md:overflow-hidden">
             <iframe
-              className="aspect-video ..."
-              src="https://www.youtube.com/embed/54MyIO-UOB8"
+              height="310"
+              className="aspect-[9/16] ..."
+              src="https://www.youtube.com/embed/jsiYpLMkaVE"
+            ></iframe>
+            <iframe
+              height="310"
+              className="aspect-[9/16] ..."
+              src="https://www.youtube.com/embed/MpSwkCrj5yg"
+            ></iframe>
+            <iframe
+              height="310"
+              className="aspect-[9/16] ..."
+              src="https://www.youtube.com/embed/MpSwkCrj5yg"
             ></iframe>
           </div>
         </div>

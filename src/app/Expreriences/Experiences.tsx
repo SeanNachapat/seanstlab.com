@@ -4,6 +4,9 @@ import ExperienceCard from "./ExperienceCard";
 import { experiences } from "../../data/experiences";
 
 const Experiences = () => {
+  useEffect(() => {
+    document.title = "Experiences";
+  }, []);
   return (
     <body className="text-white font-JetBrain bg-night">
       <div className="flex flex-col max-w-[600px] min-h-screen mx-auto p-7">

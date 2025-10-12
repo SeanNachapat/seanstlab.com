@@ -29,6 +29,13 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
         <p className="text-base font-normal text-gray-500 dark:text-gray-400 line-clamp-5">
           {experience.description}
         </p>
+        <div className="flex flex-wrap gap-2 mt-2 max-h-16 overflow-hidden">
+          {experience.tags?.map((tag: string, index: number) => (
+            <li key={index} className="flex bg-raisinBlack p-1 rounded-lg">
+              <span className="text-gray-300 text-sm font-light">{tag}</span>
+            </li>
+          ))}
+        </div>
       </li>
     </div>
   );

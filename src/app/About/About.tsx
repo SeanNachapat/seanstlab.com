@@ -10,7 +10,7 @@ const About = () => {
   return (
     <body className="bg-night text-white font-JetBrain">
       <div className="flex flex-col max-w-[600px] min-h-screen mx-auto p-7">
-        <div className="flex flex-col mx-auto items-center">
+        <div className="flex flex-col mx-auto items-center mt-5">
           <img
             className="size-[7rem] rounded-full  m-5 outline-white outline outline-offset-1"
             src="https://avatars.githubusercontent.com/u/61649121?v=4"
@@ -67,17 +67,17 @@ const About = () => {
             <iframe
               height="310"
               className="aspect-[9/16] ..."
+              src="https://www.youtube.com/embed/zOSxkYcWaBI"
+            ></iframe>
+            <iframe
+              height="310"
+              className="aspect-[9/16] ..."
+              src="https://www.youtube.com/embed/MpSwkCrj5yg"
+            ></iframe>
+            <iframe
+              height="310"
+              className="aspect-[9/16] ..."
               src="https://www.youtube.com/embed/jsiYpLMkaVE"
-            ></iframe>
-            <iframe
-              height="310"
-              className="aspect-[9/16] ..."
-              src="https://www.youtube.com/embed/MpSwkCrj5yg"
-            ></iframe>
-            <iframe
-              height="310"
-              className="aspect-[9/16] ..."
-              src="https://www.youtube.com/embed/MpSwkCrj5yg"
             ></iframe>
           </div>
         </div>

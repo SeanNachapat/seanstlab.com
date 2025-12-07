@@ -13,6 +13,7 @@ export default {
       fontFamily: {
                 'JetBrain': ['JetBrains Mono', 'sans-serif'], 
                 'Chewy': ['Chewy', 'sans-serif'], 
+                'Grace': ['Covered By Your Grace', 'sans-serif'],
               },
     },
   },

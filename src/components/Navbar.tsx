@@ -4,7 +4,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-night font-JetBrain sticky">
+    <nav className="bg-transparent font-JetBrain fixed w-full mix-blend-difference">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="text-base self-center font-semibold whitespace-nowrap text-white">
@@ -36,7 +36,9 @@ const Navbar = () => {
           </svg>
         </button>
         <div
-          className={`${menuOpen ? "" : "hidden"} w-full md:block md:w-auto`}
+          className={`${
+            menuOpen ? "" : "hidden"
+          } w-full md:block md:w-auto right-0`}
           id="navbar-default"
         >
           <ul className="text-base flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">

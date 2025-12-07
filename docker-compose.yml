@@ -1,0 +1,21 @@
+services:
+  web:
+    build: .
+    container_name: seanstlab-web
+    restart: always
+    networks:
+      - tunnel-net
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: seanstlab-tunnel
+    restart: always
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    networks:
+      - tunnel-net
+
+networks:
+  tunnel-net:
+    driver: bridge

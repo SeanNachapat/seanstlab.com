@@ -8,7 +8,7 @@ const Project = () => {
     document.title = "Projects";
   }, []);
   return (
-    <div className="bg-night text-white font-JetBrain">
+    <div className="bg-night text-white font-JetBrain p-7">
       <div className="flex flex-col items-center min-h-screen">
         <h2 className="text-center text-2xl font-bold p-5">Projects</h2>
         <div className="p-6 gap-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center">

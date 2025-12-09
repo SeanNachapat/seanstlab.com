@@ -125,42 +125,136 @@ const About = () => {
             </div>
             <ul className="text-sm text-gray-400 list-disc pl-4 text-justify">
               <li>
-                Delivered script-written and edited 50+ short-form video
-                contents for clients and Micrubik.
+                Delivered script-written and edited 100+ short-form video
+                contents for clients.
               </li>
             </ul>
           </div>
 
           <div className="mt-7">
-            <h2 className="font-bold text-xl mb-3">Skills</h2>
+            <h2 className="font-bold text-xl mb-5">Skills</h2>
             <div className="flex flex-col m-2">
               <div className="flex flex-wrap justify-start gap-9 text-xs pb-4 px-3">
                 <div className=" flex flex-col items-center w-[72px]">
                   <img
                     width={40}
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/640px-Typescript.svg.png"
+                    src="https://skillicons.dev/icons?i=typescript"
                   ></img>
                   <p className="pt-2">Typescript</p>
                 </div>
                 <div className=" flex flex-col items-center w-[72px]">
                   <img
                     width={40}
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png?20141107110902"
+                    src="https://skillicons.dev/icons?i=javascript"
                   ></img>
                   <p className="pt-2">Javascript</p>
                 </div>
                 <div className=" flex flex-col items-center w-[72px]">
                   <img
                     width={40}
-                    src="https://img.icons8.com/color/512/java-coffee-cup-logo.png"
+                    src="https://skillicons.dev/icons?i=java"
                   ></img>
                   <p className="pt-2">Java</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=python"
+                  ></img>
+                  <p className="pt-2">Python</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=cpp"
+                  ></img>
+                  <p className="pt-2">C++</p>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 mt-auto max-h-16 overflow-hidden justify-end ">
                 <li className="flex bg-raisinBlack p-1 rounded-lg">
                   <span className="text-white text-sm font-extrabold p-1">
                     Languages
+                  </span>
+                </li>
+              </div>
+            </div>
+            <hr className="solid my-5"></hr>
+            <div className="flex flex-col m-2">
+              <div className="flex flex-wrap justify-start gap-9 text-xs pb-4 px-3">
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=docker"
+                  ></img>
+                  <p className="pt-2">Docker</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=mongodb"
+                  ></img>
+                  <p className="pt-2">MongoDB</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=nodejs"
+                  ></img>
+                  <p className="pt-2">NodeJS</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=postman"
+                  ></img>
+                  <p className="pt-2">Postman</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=git"
+                  ></img>
+                  <p className="pt-2">Git</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-auto max-h-16 overflow-hidden justify-end ">
+                <li className="flex bg-raisinBlack p-1 rounded-lg">
+                  <span className="text-white text-sm font-extrabold p-1">
+                    Tools
+                  </span>
+                </li>
+              </div>
+            </div>
+            <hr className="solid my-5"></hr>
+            <div className="flex flex-col m-2">
+              <div className="flex flex-wrap justify-start gap-9 text-xs pb-4 px-3">
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=vscode"
+                  ></img>
+                  <p className="pt-2">VSCode</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=pycharm"
+                  ></img>
+                  <p className="pt-2">PyCharm</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=arduino"
+                  ></img>
+                  <p className="pt-2">ArduinoIDE</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-auto max-h-16 overflow-hidden justify-end ">
+                <li className="flex bg-raisinBlack p-1 rounded-lg">
+                  <span className="text-white text-sm font-extrabold p-1">
+                    IDEs
                   </span>
                 </li>
               </div>

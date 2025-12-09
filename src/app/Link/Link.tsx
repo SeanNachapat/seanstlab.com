@@ -53,7 +53,7 @@ const Link = () => {
             TikTok
           </a>
           <a
-            href="/Expreriences/Reels"
+            href="/experiences/reels"
             className="flex outline outline-white rounded-full p-2 hover:scale-105 transition-all"
           >
             Reels

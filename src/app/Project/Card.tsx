@@ -12,13 +12,13 @@ const Card: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="bg-raisinBlack flex flex-col gap-1 my-1 rounded-2xl w-[360px] h-[450px] hover:scale-105 transition-transform cursor-pointer">
         {project.imageUrl ? (
           <img
-            className="flex rounded-t-2xl h-52 object-cover"
+            className="flex rounded-t-2xl h-[200px] object-cover"
             src={project.imageUrl}
             alt={project.altText}
           ></img>
         ) : (
           <img
-            className="flex rounded-t-2xl h-52 object-cover"
+            className="flex rounded-t-2xl h-[200px] object-cover"
             src="https://cataas.com/cat"
           />
         )}

@@ -23,15 +23,15 @@ export const projects: Project[] = [
     description: "This project was created for educational purposes by Computer Science students at KMITL. What's The Word? is a web application game for Thai students to practice their knowledge of English vocabulary, categorized by the Common European Framework of Reference for Languages(CEFR).",
     imageUrl: "/images/wtw.png",
     pageLink: "https://github.com/SeanNachapat/whatstheword",
-    tags: ["Javascript", "NEXT.js", "Vercel"]
+    tags: ["GeminiAPI", "Javascript", "NEXT.js", "Vercel"]
   },
   {
     id: 2,
-    title: "What's The Word",
-    description: "This project was created for educational purposes by Computer Science students at KMITL. What's The Word? is a web application game for Thai students to practice their knowledge of English vocabulary, categorized by the Common European Framework of Reference for Languages(CEFR).",
-    imageUrl: "/images/wtw.png",
-    pageLink: "https://github.com/SeanNachapat/whatstheword",
-    tags: ["Javascript", "NEXT.js", "Vercel"]
+    title: "jangsimantongtorn",
+    description: "This project was created for ENTIRELY satirical purposes. Jangsimantongtorn is a course withdrawal advisor who, based on the score, will recommend whether the course should be withdrawn. Integrated with the Gemini 2.0 flash model to generate insulting and hateful advice.",
+    imageUrl: "/images/JMT.png",
+    pageLink: "jangsimantongtorn.vercel.app",
+    tags: ["GeminiAPI", "Javascript", "NEXT.js", "Vercel"]
   },
   {
     id: 20,

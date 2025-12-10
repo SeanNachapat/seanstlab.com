@@ -6,6 +6,7 @@ export interface Experience {
   referal?: string;
   description?: string;
   date?: string;
+  type?: string;
   tags?: string[];
 }
 
@@ -16,6 +17,7 @@ export const experiences: Experience[] = [
     referal:"Department of Computer Science, KMITL",
     description:"Conducted a free fundamental Java programming course for high school students about the importance of computer programming, data structures, if-else conditions, and loops.",
     date: "October 2025",
+    type:"cs",
     tags:["Public Lectures", "Java"]
   },
   {
@@ -25,6 +27,7 @@ export const experiences: Experience[] = [
     referal:"Department of Computer Science, KMITL",
     description:"Volunteered as a lecturer to lead a 5-day lecture for 30 highschool students, about object-oriented programming (OOP) and fundamental Java programming.",
     date: "August 2025",
+    type:"cs",
     tags:["Public Lectures", "Java", "OOP"]
   },
   {
@@ -34,6 +37,7 @@ export const experiences: Experience[] = [
     referal:"Micrubik",
     description:"Delivered script-written and edited 50+ short-form video contents for clients and Micrubik.",
     date: "June 2024",
+    type:"content",
     tags:["Scriptwriting", "Creative Content Creation"]
   }
 ];

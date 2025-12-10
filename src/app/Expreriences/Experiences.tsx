@@ -8,13 +8,16 @@ const Experiences = () => {
     document.title = "Experiences";
   }, []);
   return (
-    <body className="text-white font-JetBrain bg-night  p-7">
-      <div className="flex flex-col max-w-[600px] min-h-screen mx-auto p-7">
-        <ol className="relative border-s border-gray-200 dark:border-gray-700">
-          {experiences.map((experience) => (
-            <ExperienceCard key={experience.id} experience={experience} />
-          ))}
-        </ol>
+    <body className="text-white font-JetBrain bg-night">
+      <div className="flex flex-col max-w-4xl min-h-screen mx-auto p-7">
+        <div className="relative">
+          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+          <ol className="relative">
+            {experiences.map((experience) => (
+              <ExperienceCard key={experience.id} experience={experience} />
+            ))}
+          </ol>
+        </div>
       </div>
     </body>
   );

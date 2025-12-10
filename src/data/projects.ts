@@ -30,7 +30,7 @@ export const projects: Project[] = [
     title: "jangsimantongtorn",
     description: "This project was created for ENTIRELY satirical purposes. Jangsimantongtorn is a course withdrawal advisor who, based on the score, will recommend whether the course should be withdrawn. Integrated with the Gemini 2.0 flash model to generate insulting and hateful advice.",
     imageUrl: "/images/JMT.png",
-    pageLink: "jangsimantongtorn.vercel.app",
+    pageLink: "https://jangsimantongtorn.vercel.app",
     tags: ["GeminiAPI", "Javascript", "NEXT.js", "Vercel"]
   },
   {

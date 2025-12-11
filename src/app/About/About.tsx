@@ -260,6 +260,42 @@ const About = () => {
               </div>
             </div>
             <hr className="solid my-5"></hr>
+
+            {/* Softwares */}
+            <div className="flex flex-col m-2">
+              <div className="flex flex-wrap justify-start gap-9 text-xs pb-4 px-3">
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=au"
+                  ></img>
+                  <p className="pt-2">Audition</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=pr"
+                  ></img>
+                  <p className="pt-2">Premiere Pro</p>
+                </div>
+                <div className=" flex flex-col items-center w-[72px]">
+                  <img
+                    width={40}
+                    src="https://skillicons.dev/icons?i=ps"
+                  ></img>
+                  <p className="pt-2">Photoshop</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-auto max-h-16 overflow-hidden justify-end ">
+                <li className="flex bg-raisinBlack p-1 rounded-lg">
+                  <span className="text-white text-sm font-extrabold p-1">
+                    Softwares
+                  </span>
+                </li>
+              </div>
+            </div>
+            <hr className="solid my-5"></hr>
+
           </div>
         </div>
       </div>

@@ -66,4 +66,11 @@ export const showreels: Showreel[] = [
     url: "zOSxkYcWaBI",
     type: "short"
   },
+    {
+    id: 11,
+    title: "Dynamic View",
+    url: "92JXkV-yZV0",
+    type: "short"
+  },
+  
 ];

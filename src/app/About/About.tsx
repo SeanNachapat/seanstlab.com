@@ -63,7 +63,12 @@ const About = () => {
             </span>
           </a>
 
-          <div className="flex flex-row justify-evenly overflow-x-scroll md:overflow-hidden">
+          <div className="flex flex-row justify-evenly overflow-x-scroll dark-scrollbar scroll-m-6">
+            <iframe
+              height="310"
+              className="aspect-[9/16] ..."
+              src="https://www.youtube.com/embed/92JXkV-yZV0"
+            ></iframe>
             <iframe
               height="310"
               className="aspect-[9/16] ..."

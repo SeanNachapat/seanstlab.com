@@ -13,7 +13,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Go-Shrimp",
     description: "Web Application for Shrimp Farmers integrated with MongoDB database, image classification and disease prediction",
-    imageUrl: "",
+    imageUrl: "/images/go-shrimp.png",
     pageLink: "https://github.com/SeanNachapat/go-shrimp",
     tags: ["Javascript", "NEXT.js", "Vercel", "MongoDB", "GeminiAPI"]
   },

@@ -17,7 +17,7 @@ const vt323 = VT323({
 
 export const metadata: Metadata = {
   title: "Seanstlab",
-  description: "Nachapat Iamphuang's Portfolio",
+  description: "Seanstlab by Nachapat I.",
 };
 
 export default function RootLayout({

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { experiences } from "@/data/experiences";
+import { skillCategories } from "@/data/skills";
 
 export default function AboutPage() {
   return (
@@ -56,44 +58,22 @@ export default function AboutPage() {
                 </h3>
               </Link>
               <div className="space-y-6">
-                <div className="bg-neutral-100 dark:bg-neutral-900/50 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 transition-hover hover:border-neutral-400 dark:hover:border-neutral-600">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg text-black dark:text-white">Lecturer</h4>
-                    <span className="text-xs font-mono bg-neutral-200 dark:bg-neutral-800 px-2 py-1 rounded">October 2025</span>
+                {experiences.map((exp, index) => (
+                  <div key={index} className="bg-neutral-100 dark:bg-neutral-900/50 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 transition-hover hover:border-neutral-400 dark:hover:border-neutral-600">
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="font-bold text-lg text-black dark:text-white">{exp.role}</h4>
+                      <span className="text-xs font-mono bg-neutral-200 dark:bg-neutral-800 px-2 py-1 rounded">{exp.period}</span>
+                    </div>
+                    <a href={exp.link} target="_blank" rel="noreferrer" className="text-sm text-neutral-500 hover:underline mb-2 block">
+                      {exp.organization}
+                    </a>
+                    <ul className="list-disc list-inside text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                      {exp.details.map((detail, i) => (
+                        <li key={i}>{detail}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <a href="#" className="text-sm text-neutral-500 hover:underline mb-2 block">
-                    Department of Computer Science, KMITL
-                  </a>
-                  <ul className="list-disc list-inside text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
-                    <li>Conducted a free fundamental Java programming course for high school students about the importance of computer programming, data structures, if-else conditions, and loops.</li>
-                  </ul>
-                </div>
-
-                <div className="bg-neutral-100 dark:bg-neutral-900/50 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 transition-hover hover:border-neutral-400 dark:hover:border-neutral-600">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg text-black dark:text-white">Teaching Assistant</h4>
-                    <span className="text-xs font-mono bg-neutral-200 dark:bg-neutral-800 px-2 py-1 rounded">August 2025</span>
-                  </div>
-                  <a href="https://cscamp.net/" target="_blank" rel="noreferrer" className="text-sm text-neutral-500 hover:underline mb-2 block">
-                    Department of Computer Science, KMITL
-                  </a>
-                  <ul className="list-disc list-inside text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
-                    <li>Volunteered as a lecturer to lead a 5-day lecture for 30 highschool students, about object-oriented programming (OOP) and fundamental Java programming.</li>
-                  </ul>
-                </div>
-
-                <div className="bg-neutral-100 dark:bg-neutral-900/50 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 transition-hover hover:border-neutral-400 dark:hover:border-neutral-600">
-                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg text-black dark:text-white">Video Editor & Content Creator</h4>
-                    <span className="text-xs font-mono bg-neutral-200 dark:bg-neutral-800 px-2 py-1 rounded">June 2024</span>
-                  </div>
-                  <a href="https://www.youtube.com/@micrubik" target="_blank" rel="noreferrer" className="text-sm text-neutral-500 hover:underline mb-2 block">
-                    Micrubik
-                  </a>
-                  <ul className="list-disc list-inside text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
-                    <li>Delivered script-written and edited 50+ short-form video contents for clients and Micrubik.</li>
-                  </ul>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -104,76 +84,19 @@ export default function AboutPage() {
               <h3 className="font-pixel text-2xl mb-8">SKILLS</h3>
               
               <div className="space-y-8 font-mono text-sm">
-                <div>
-                  <span className="text-neutral-500 block mb-3 font-bold">LANGUAGES</span>
-                  <div className="flex flex-wrap gap-4">
-                    {[
-                      { name: 'TypeScript', icon: 'typescript' },
-                      { name: 'JavaScript', icon: 'javascript' },
-                      { name: 'Java', icon: 'java' },
-                      { name: 'Python', icon: 'python' },
-                      { name: 'C++', icon: 'cpp' }
-                    ].map(skill => (
-                      <div key={skill.name} className="flex flex-col items-center gap-2 group">
-                        <img src={`https://skillicons.dev/icons?i=${skill.icon}`} width={40} height={40} alt={skill.name} className="transition-transform group-hover:scale-110"/>
-                      </div>
-                    ))}
+                {skillCategories.map((category, catIndex) => (
+                  <div key={category.label}>
+                    {catIndex > 0 && <div className="h-px bg-neutral-200 dark:bg-neutral-800 w-full mb-8" />}
+                    <span className="text-neutral-500 block mb-3 font-bold">{category.label}</span>
+                    <div className="flex flex-wrap gap-4">
+                      {category.skills.map(skill => (
+                        <div key={skill.name} className="flex flex-col items-center gap-2 group">
+                          <img src={`https://skillicons.dev/icons?i=${skill.icon}`} width={40} height={40} alt={skill.name} className="transition-transform group-hover:scale-110"/>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                <div className="h-px bg-neutral-200 dark:bg-neutral-800 w-full" />
-
-                <div>
-                  <span className="text-neutral-500 block mb-3 font-bold">TOOLS & DEVOPS</span>
-                  <div className="flex flex-wrap gap-4">
-                     {[
-                      { name: 'Docker', icon: 'docker' },
-                      { name: 'MongoDB', icon: 'mongodb' },
-                      { name: 'NodeJS', icon: 'nodejs' },
-                      { name: 'Postman', icon: 'postman' },
-                      { name: 'Git', icon: 'git' }
-                    ].map(skill => (
-                      <div key={skill.name} className="flex flex-col items-center gap-2 group">
-                        <img src={`https://skillicons.dev/icons?i=${skill.icon}`} width={40} height={40} alt={skill.name} className="transition-transform group-hover:scale-110"/>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="h-px bg-neutral-200 dark:bg-neutral-800 w-full" />
-
-                <div>
-                   <span className="text-neutral-500 block mb-3 font-bold">IDEs</span>
-                  <div className="flex flex-wrap gap-4">
-                     {[
-                      { name: 'VSCode', icon: 'vscode' },
-                      { name: 'PyCharm', icon: 'pycharm' },
-                      { name: 'Arduino', icon: 'arduino' }
-                    ].map(skill => (
-                      <div key={skill.name} className="flex flex-col items-center gap-2 group">
-                        <img src={`https://skillicons.dev/icons?i=${skill.icon}`} width={40} height={40} alt={skill.name} className="transition-transform group-hover:scale-110"/>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="h-px bg-neutral-200 dark:bg-neutral-800 w-full" />
-
-                <div>
-                   <span className="text-neutral-500 block mb-3 font-bold">SOFTWARE</span>
-                  <div className="flex flex-wrap gap-4">
-                     {[
-                      { name: 'Audition', icon: 'au' },
-                      { name: 'Premiere Pro', icon: 'pr' },
-                      { name: 'Photoshop', icon: 'ps' }
-                    ].map(skill => (
-                      <div key={skill.name} className="flex flex-col items-center gap-2 group">
-                         <img src={`https://skillicons.dev/icons?i=${skill.icon}`} width={40} height={40} alt={skill.name} className="transition-transform group-hover:scale-110"/>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
+                ))}
               </div>
             </div>
           </div>

@@ -1,15 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { socials } from "@/data/socials";
 
 export default function ConnectPage() {
-  const links = [
-    { name: "GITHUB", href: "https://github.com/SeanNachapat", icon: Github },
-    { name: "LINKEDIN", href: "https://www.linkedin.com/in/nachapat-iamphuang/", icon: Linkedin },
-    { name: "INSTAGRAM", href: "https://www.instagram.com/seanst._", icon: Twitter },
-    { name: "EMAIL", href: "mailto:[EMAIL_ADDRESS]", icon: Mail },
-  ];
+  const links = socials;
 
   return (
     <main className="min-h-screen max-w-screen mx-auto px-6 lg:px-20 pt-32 pb-20">

@@ -9,10 +9,10 @@ interface ProjectCardProps {
   tags: string[];
   link: string;
   index: number;
+  flagship?: boolean;
 }
 
-export default function ProjectCard({ title, description, tags, link, index, image }: ProjectCardProps & { image?: string }) {
-  // Grain effect data URI
+export default function ProjectCard({ title, description, tags, link, index, image, flagship }: ProjectCardProps & { image?: string }) {
   const grainImage = "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E\")";
 
   return (
@@ -20,7 +20,7 @@ export default function ProjectCard({ title, description, tags, link, index, ima
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative h-[300px] lg:h-[450px] overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800"
+      className={`group relative overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800 ${flagship ? "h-[350px] lg:h-[500px]" : "h-[300px] lg:h-[450px]"}`}
     >
       <Link href={link} className="block h-full relative">
         {/* Background Image */}
@@ -32,11 +32,13 @@ export default function ProjectCard({ title, description, tags, link, index, ima
            />
         </div>
 
-        {/* Grain Overlay */}
-        <div 
-            className="absolute inset-0 text-transparent opacity-20 pointer-events-none mix-blend-overlay"
-            style={{ backgroundImage: grainImage }}
-        />
+        {/* Animated Grain Overlay */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div 
+              className="absolute -inset-[50%] w-[300%] h-[300%] opacity-20 mix-blend-overlay animate-grain"
+              style={{ backgroundImage: grainImage, backgroundRepeat: 'repeat' }}
+          />
+        </div>
 
         {/* Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90" />

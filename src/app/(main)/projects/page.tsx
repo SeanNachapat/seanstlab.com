@@ -2,24 +2,11 @@
 
 import ProjectCard from "@/components/ProjectCard";
 import { motion } from "framer-motion";
+import { projects } from "@/data/projects";
 
 export default function ProjectsPage() {
-  const projects = [
-    {
-      title: "Go-Shrimp | Smart Farm Management System",
-      description: "Web Application for Shrimp Farmers integrated with MongoDB database, image classification and disease prediction. Includes real-time water quality monitoring, inventory tracking, and data visualization for pond cycles.",
-      tags: ["React", "NEXT.js", "MongoDB", "GeminiAPI"],
-      link: "https://github.com/SeanNachapat/go-shrimp",
-      image: "https://github.com/SeanNachapat/go-shrimp/blob/main/GoShrimp.png?raw=true"
-    },
-    {
-      title: "What's The Word",
-      description: "What's The Word? is a web application game for Thai students to practice their knowledge of English vocabulary, categorized by the Common European Framework of Reference for Languages(CEFR).",
-      tags: ["React", "Vercel", "NEXT.js", "GeminiAPI"],
-      link: "https://github.com/SeanNachapat/whatstheword",
-      image: "https://github.com/SeanNachapat/whatstheword/blob/main/wtw.png?raw=true" 
-    }
-  ];
+  const flagshipProjects = projects.filter((p) => p.flagship);
+  const regularProjects = projects.filter((p) => !p.flagship);
 
   return (
     <main className="min-h-screen max-w-screen mx-auto px-6 lg:px-20 pt-32 pb-20">
@@ -44,12 +31,24 @@ export default function ProjectsPage() {
             </motion.p>
         </div>
 
-        {/* Grid */}
+        {flagshipProjects.length > 0 && (
+          <div className="mb-6 lg:mb-8 space-y-6 lg:space-y-8">
+            {flagshipProjects.map((project, index) => (
+              <ProjectCard 
+                key={`flagship-${index}`}
+                index={index}
+                {...project}
+                flagship
+              />
+            ))}
+          </div>
+        )}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
-            {projects.map((project, index) => (
+            {regularProjects.map((project, index) => (
                 <ProjectCard 
                     key={index}
-                    index={index}
+                    index={index + flagshipProjects.length}
                     {...project}
                 />
             ))}

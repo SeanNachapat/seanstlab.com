@@ -23,7 +23,7 @@ export const projects: Project[] = [
             "Web Application for Shrimp Farmers integrated with MongoDB database, image classification and disease prediction. Includes real-time water quality monitoring, inventory tracking, and data visualization for pond cycles.",
         tags: ["React", "NEXT.js", "MongoDB", "GeminiAPI"],
         link: "https://github.com/SeanNachapat/go-shrimp",
-        image: "/Goshrimp.png",
+        image: "/GoShrimp.png",
     },
     {
         title: "What's The Word",
@@ -32,6 +32,6 @@ export const projects: Project[] = [
         tags: ["React", "Vercel", "NEXT.js", "GeminiAPI"],
         link: "https://github.com/SeanNachapat/whatstheword",
         image:
-            "https://github.com/SeanNachapat/whatstheword/blob/main/wtw.png?raw=true",
+            "/WTW.png",
     },
 ];

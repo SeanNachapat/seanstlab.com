@@ -32,7 +32,6 @@ export default function ProjectCard({ title, description, tags, link, index, ima
            />
         </div>
 
-        {/* Animated Grain Overlay */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div 
               className="absolute -inset-[50%] w-[300%] h-[300%] opacity-20 mix-blend-overlay animate-grain"
@@ -40,10 +39,8 @@ export default function ProjectCard({ title, description, tags, link, index, ima
           />
         </div>
 
-        {/* Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90" />
 
-        {/* Content - Bottom Aligned */}
         <div className="absolute bottom-0 left-0 w-full p-4 lg:p-8 flex flex-col justify-end h-full">
             <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
                 <div className="flex items-center justify-between mb-2 lg:mb-4">

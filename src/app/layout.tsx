@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, VT323 } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import SmoothScroll from "@/components/SmoothScroll";
+
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
@@ -33,8 +32,7 @@ export default function RootLayout({
       <body
         className={`${jetbrainsMono.variable} ${vt323.variable} antialiased font-sans`}
       >
-        <Navbar />
-        <SmoothScroll />
+
         {children}
       </body>
     </html>

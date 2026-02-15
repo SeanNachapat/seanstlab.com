@@ -1,4 +1,6 @@
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export default function MainLayout({
   children,
@@ -7,6 +9,8 @@ export default function MainLayout({
 }) {
   return (
     <>
+      <Navbar />
+      <SmoothScroll />
       {children}
       <Footer />
     </>

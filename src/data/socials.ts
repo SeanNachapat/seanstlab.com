@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter, type LucideIcon } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Youtube, Video, type LucideIcon } from "lucide-react";
 
 export interface SocialLink {
     name: string;
@@ -18,5 +18,15 @@ export const socials: SocialLink[] = [
         href: "https://www.instagram.com/seanst._",
         icon: Twitter,
     },
-    { name: "EMAIL", href: "mailto:[EMAIL_ADDRESS]", icon: Mail },
+    {
+        name: "TIKTOK",
+        href: "https://www.tiktok.com/@seanst._",
+        icon: Video,
+    },
+    {
+        name: "YOUTUBE",
+        href: "https://www.youtube.com/@seanst",
+        icon: Youtube,
+    },
+    { name: "EMAIL", href: "mailto:your-email@example.com", icon: Mail },
 ];

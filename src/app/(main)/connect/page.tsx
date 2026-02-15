@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { socials } from "@/data/socials";
 
 export default function ConnectPage() {
-  const links = socials;
+  const links = socials.filter(s => s.name !== "TIKTOK" && s.name !== "YOUTUBE");
 
   return (
     <main className="min-h-screen max-w-screen mx-auto px-6 lg:px-20 pt-32 pb-20">

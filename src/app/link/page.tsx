@@ -31,7 +31,7 @@ export default function LinkPage() {
                     <p className="font-mono text-sm text-gray-500 max-w-[300px] mb-6">
                         Computer Science Student @ KMITL & AI Researcher
                     </p>
-                    <a href="https://googlestudentambassador.info/th" target="_blank" rel="noopener noreferrer">
+                    <a href="/experiences/gsa" target="_blank" rel="noopener noreferrer">
                         <motion.img 
                             src="https://framerusercontent.com/images/8wTRIiSVSyfl0uTe07aNw7eiRJ0.png" 
                             width={80} 

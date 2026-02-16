@@ -30,7 +30,6 @@ export default function ExperiencesPage() {
               transition={{ delay: 0.1 * index }}
               className="relative"
             >
-              {/* Timeline Dot */}
               <span className="absolute -left-[41px] md:-left-[57px] top-6 w-5 h-5 rounded-full bg-neutral-100 dark:bg-neutral-900 border-2 border-neutral-300 dark:border-neutral-700" />
 
               <div className="bg-neutral-100 dark:bg-neutral-900/50 p-8 rounded-xl border border-neutral-200 dark:border-neutral-800 transition-all hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-lg">
@@ -52,7 +51,7 @@ export default function ExperiencesPage() {
                 </div>
                 
                 <ul className="list-disc list-inside space-y-2 text-neutral-600 dark:text-neutral-400 font-mono text-sm leading-relaxed">
-                  {exp.details.map((detail, i) => (
+                  {exp.details.slice(0, 1).map((detail, i) => (
                     <li key={i}>{detail}</li>
                   ))}
                 </ul>

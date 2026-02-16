@@ -68,8 +68,8 @@ export default function AboutPage() {
                       {exp.organization}
                     </a>
                     <ul className="list-disc list-inside text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
-                      {exp.details.map((detail, i) => (
-                        <li key={i}>{detail}</li>
+                  {exp.details.slice(0, 1).map((detail, i) => (
+                    <li key={i}>{detail}</li>
                       ))}
                     </ul>
                   </div>

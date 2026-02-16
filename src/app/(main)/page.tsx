@@ -32,7 +32,7 @@ export default function Home() {
                   <p className="max-w-xl text-lg lg:text-xl text-gray-700 dark:text-gray-400 leading-relaxed font-mono">
                      I'm Sean, a passionate developer, and a machine learning enthusiast. Currently, a 1st year Computer Science student, Teaching Assistance and Lecturer at KMITL.
                   </p>
-                  <a href="https://googlestudentambassador.info/th">                  <motion.img 
+                  <a href="/experiences/gsa">                  <motion.img 
                      src="https://framerusercontent.com/images/8wTRIiSVSyfl0uTe07aNw7eiRJ0.png" 
                      width={120} 
                      height={120} 

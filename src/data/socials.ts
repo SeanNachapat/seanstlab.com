@@ -28,5 +28,5 @@ export const socials: SocialLink[] = [
         href: "https://www.youtube.com/@seanst",
         icon: Youtube,
     },
-    { name: "EMAIL", href: "mailto:your-email@example.com", icon: Mail },
+    { name: "EMAIL", href: "mailto:sean@seanstlab.com", icon: Mail },
 ];

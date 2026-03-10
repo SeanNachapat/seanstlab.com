@@ -18,6 +18,14 @@ export const projects: Project[] = [
         flagship: true,
     },
     {
+        title: "Loom Analytics | Analytics Platform for Creators",
+        description:
+            "Loom Analytics is a web application for creators to analyze their content and provide insights to improve their engagement.",
+        tags: ["React", "NEXT.js", "MongoDB", "GeminiAPI"],
+        link: "https://github.com/SeanNachapat/loom-analytics",
+        image: "/loom.png",
+    },
+    {
         title: "Go-Shrimp | Smart Farm Management System",
         description:
             "Web Application for Shrimp Farmers integrated with MongoDB database, image classification and disease prediction. Includes real-time water quality monitoring, inventory tracking, and data visualization for pond cycles.",

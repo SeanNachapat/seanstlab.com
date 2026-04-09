@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import { socials } from "@/data/socials";
 import AsciiPlant from "@/components/AsciiPlant";
 import Link from "next/link";
@@ -44,6 +44,56 @@ export default function LinkPage() {
                             }}
                             whileTap={{ scale: 0.95 }}
                         />
+                    </a>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 }}
+                    className="w-full mb-8"
+                >
+                    <a
+                        href="https://stacked.seanstlab.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative group block w-full p-6 rounded-sm border-2 border-[#72E182] bg-[#72E182]/5 hover:bg-[#72E182]/10 transition-all duration-300 overflow-hidden"
+                    >
+                        {/* Animated background glow */}
+                        <div className="absolute inset-0 bg-[#72E182]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl -z-10" />
+                        
+                        <div className="flex items-center gap-4">
+                            <div className="relative w-12 h-12 shrink-0">
+                                <img 
+                                    src="/stacked.png" 
+                                    alt="Stacked Logo" 
+                                    className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(114,225,130,0.5)]"
+                                />
+                            </div>
+                            <div className="flex-1 text-left">
+                                <h3 className="font-pixel text-xl text-[#72E182] flex items-center gap-2">
+                                    TRY STACKED <ArrowUpRight className="w-4 h-4" />
+                                </h3>
+                                <p className="font-mono text-[10px] text-[#72E182]/70 uppercase tracking-tighter">
+                                    Digital Sticker Bomb for Developers
+                                </p>
+                            </div>
+                            <div className="hidden sm:block">
+                                <motion.div
+                                    animate={{ 
+                                        rotate: [0, 10, -10, 0],
+                                        scale: [1, 1.1, 1]
+                                    }}
+                                    transition={{ 
+                                        duration: 2, 
+                                        repeat: Infinity,
+                                        ease: "easeInOut" 
+                                    }}
+                                >
+                                    <Sparkles className="w-6 h-6 text-[#72E182]" />
+                                </motion.div>
+                            </div>
+                        </div>
                     </a>
                 </motion.div>
 

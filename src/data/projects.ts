@@ -9,6 +9,15 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        title: "Stacked | Digital Sticker Bomb for developers",
+        description:
+            "specialized platform for developers to aggregate and showcase their verified technical achievements. By centralizing badges, certifications, and hackathon wins into a single, authenticated profile, StackedLabs moves beyond the traditional resume to provide a high-trust, visual representation of a developer’s true skill set and growth.",
+        tags: ["MongoDB", "React", "NEXT.js", "Puppeteer", "Typescript"],
+        link: "https://stacked.seanstlab.com/",
+        image: "/stacked.png",
+        flagship: true,
+    },
+    {
         title: "Ducksy | AI Productivity Companion",
         description:
             "Ducksy is an intelligent desktop companion powered by Gemini 3 that lives on your screen to help you navigate complex tasks, summarize meetings, and provide real-time assistance.",

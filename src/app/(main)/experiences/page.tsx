@@ -1,65 +1,110 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experiences } from "@/data/experiences";
+import { experiences, Experience } from "@/data/experiences";
 
 export default function ExperiencesPage() {
-
   return (
-    <main className="min-h-screen max-w-screen mx-auto px-6 lg:px-20 pt-32 pb-20">
-      <div className="max-w-4xl mx-auto">
+    <main className="min-h-screen max-w-screen-xl mx-auto px-6 lg:px-20 pt-32 pb-20">
+      <div className="max-w-6xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-pixel text-4xl lg:text-6xl mb-12 text-black dark:text-white"
+          className="font-pixel text-4xl lg:text-6xl mb-24 text-center text-foreground"
         >
           EXPERIENCES
         </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.1 }}
-          className="relative border-l border-neutral-200 dark:border-neutral-800 ml-3 md:ml-6 space-y-8 pl-8 md:pl-12"
-        >
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 * index }}
-              className="relative"
-            >
-              <span className="absolute -left-[41px] md:-left-[57px] top-6 w-5 h-5 rounded-full bg-neutral-100 dark:bg-neutral-900 border-2 border-neutral-300 dark:border-neutral-700" />
+        <div className="relative">
+          {/* Central Timeline Line - Desktop Only */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border hidden md:block transform -translate-x-1/2" />
 
-              <div className="bg-neutral-100 dark:bg-neutral-900/50 p-8 rounded-xl border border-neutral-200 dark:border-neutral-800 transition-all hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-lg">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
-                  <div>
-                     <h3 className="font-bold text-xl text-black dark:text-white font-pixel tracking-wide mb-1">{exp.role}</h3>
-                     <a 
-                        href={exp.link} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="text-neutral-500 hover:text-black dark:hover:text-white hover:underline transition-colors font-mono text-sm"
-                     >
-                      {exp.organization} ↗
-                     </a>
-                  </div>
-                  <span className="text-xs font-mono bg-neutral-200 dark:bg-neutral-800 px-3 py-1 rounded-full self-start text-neutral-600 dark:text-neutral-400">
-                    {exp.period}
-                  </span>
+          <div className="relative flex flex-col">
+            {experiences.map((exp, index) => {
+              const prevExp = index > 0 ? experiences[index - 1] : null;
+              const isDifferentType = prevExp && prevExp.type !== exp.type;
+              
+              const spacingClass = index === 0 
+                ? "" 
+                : isDifferentType 
+                  ? "mt-12 md:mt-0" 
+                  : "mt-12 md:mt-24";
+
+              return (
+                <div key={index} className={spacingClass}>
+                  <ExperienceItem exp={exp} index={index} />
                 </div>
-                
-                <ul className="list-disc list-inside space-y-2 text-neutral-600 dark:text-neutral-400 font-mono text-sm leading-relaxed">
-                  {exp.details.slice(0, 1).map((detail, i) => (
-                    <li key={i}>{detail}</li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </main>
+  );
+}
+
+function ExperienceItem({ exp, index }: { exp: Experience; index: number }) {
+  const isDeveloper = exp.type === 'developer';
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.4, delay: 0.1 }}
+      className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-6 md:gap-0"
+    >
+      {/* Left Side (Other) */}
+      <div className={`order-2 md:order-1 ${!isDeveloper ? 'md:pr-12 lg:pr-20' : 'hidden md:block opacity-0 pointer-events-none'}`}>
+        {!isDeveloper && <ExperienceCard exp={exp} />}
+      </div>
+
+      {/* Middle: Timeline Dot */}
+      <div className="flex justify-center items-center relative z-10 order-1 md:order-2">
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          className="w-2 h-2 rounded-full bg-muted"
+        />
+      </div>
+
+      {/* Right Side (Developer) */}
+      <div className={`order-3 ${isDeveloper ? 'md:pl-12 lg:pl-20' : 'hidden md:block opacity-0 pointer-events-none'}`}>
+        {isDeveloper && <ExperienceCard exp={exp} />}
+      </div>
+    </motion.div>
+  );
+}
+
+function ExperienceCard({ exp }: { exp: Experience }) {
+  return (
+    <div className="space-y-3 text-left">
+      <div className="space-y-1">
+        <span className="text-[10px] font-mono text-muted uppercase tracking-widest">
+          {exp.period}
+        </span>
+        <h3 className="font-pixel text-xl lg:text-2xl text-foreground leading-tight">
+          {exp.role}
+        </h3>
+        <a
+          href={exp.link}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-block text-muted hover:text-foreground hover:underline transition-colors font-mono text-xs"
+        >
+          {exp.organization} ↗
+        </a>
+      </div>
+
+      <ul className="space-y-2">
+        {exp.details.map((detail, i) => (
+          <li key={i} className="flex items-start gap-2 text-muted-foreground font-mono text-xs leading-relaxed text-left" style={{ color: 'var(--muted)' }}>
+            <span className="mt-1.5 w-1 h-1 rounded-full bg-border flex-shrink-0" />
+            <span>{detail}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

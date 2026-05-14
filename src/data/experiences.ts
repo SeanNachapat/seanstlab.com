@@ -10,14 +10,13 @@ export interface Experience {
 
 export const experiences: Experience[] = [
     {
-        role: "Content Creator & Event Coordinator",
+        role: "Content Creator",
         period: "May 2026 - Present",
         organization: "Google Developer Group Bangkok, GDG",
         link: "https://gdg.community.dev/gdg-bangkok/",
         details: [
-            "Content creation: Creating engaging content for GDG Bangkok's social media platforms.",
-            "Event coordination: Planning and executing events for GDG Bangkok.",
-            "Community building: Fostering a vibrant community of AI enthusiasts and developers using Google's suite of tools.",
+            "Creating engaging content and promotional materials for GDG Bangkok's social media platforms.",
+            "Fostering a vibrant community of AI enthusiasts and developers.",
         ],
         type: 'other',
     },

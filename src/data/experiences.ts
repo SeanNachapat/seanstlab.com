@@ -21,6 +21,18 @@ export const experiences: Experience[] = [
         type: 'other',
     },
     {
+        role: "Teaching Assistant",
+        period: "April 2026",
+        organization: "Department of Computer Science, KMITL",
+        link: "https://cscamp.net/",
+        details: [
+            "Designed and delivered an intensive 5-day Java programming boot camp for 100 high-potential high school students selected nationwide.",
+            "Structured and lectured key programming paradigms, with a primary focus on Java methods (functions, parameters, return types, and scope), control structures, and arrays.",
+            "Coordinated a team of student helpers to facilitate hands-on coding labs, ensuring personalized support and successful project completion for all attendees.",
+        ],
+        type: 'developer',
+    },
+    {
         role: "Google Student Ambassador",
         period: "February 2026 - June 2026",
         organization: "Google",
@@ -58,7 +70,9 @@ export const experiences: Experience[] = [
         organization: "Department of Computer Science, KMITL",
         link: "https://cscamp.net/",
         details: [
-            "Volunteered as a lecturer to lead a 5-day lecture for 30 highschool students, about object-oriented programming (OOP) and fundamental Java programming.",
+            "Volunteered as a lead lecturer to conduct a 5-day deep dive into Object-Oriented Programming (OOP) concepts and Java fundamentals for 30 selected students.",
+            "Created custom learning materials, interactive slides, and live coding demonstrations explaining classes, objects, inheritance, polymorphism, and encapsulation.",
+            "Guided students through daily coding challenges and final project design, reinforcing logical thinking and core software engineering best practices.",
         ],
         type: 'developer',
     },

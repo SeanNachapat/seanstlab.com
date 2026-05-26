@@ -1,3 +1,31 @@
+export interface ExperiencePreviewConfig {
+    type: 'youtube' | 'terminal' | 'google' | 'community' | 'code' | 'iframe' | 'website' | 'slides' | 'canva';
+    youtubeId?: string;
+    terminalSystem?: string;
+    terminalCmd?: string;
+    terminalLines?: string[];
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    accentColor?: string;
+    codeLanguage?: string;
+    codeSnippet?: string;
+    iframeUrl?: string;
+    canvaUrl?: string;
+    slides?: Array<{
+        title: string;
+        bullets?: string[];
+        codeSnippet?: string;
+        visualElement?: 'diagram-oop' | 'diagram-ds' | 'diagram-methods' | 'bullet-list';
+    }>;
+    websiteMockup?: {
+        heroTitle: string;
+        heroSubtitle: string;
+        stats?: Array<{ label: string; value: string }>;
+        accentColor?: string;
+        theme?: 'dark' | 'light' | 'retro' | 'google';
+    };
+}
 
 export interface Experience {
     role: string;
@@ -6,6 +34,7 @@ export interface Experience {
     link: string;
     details: string[];
     type: 'developer' | 'other';
+    preview?: ExperiencePreviewConfig;
 }
 
 export const experiences: Experience[] = [
@@ -19,6 +48,10 @@ export const experiences: Experience[] = [
             "Fostering a vibrant community of AI enthusiasts and developers.",
         ],
         type: 'other',
+        preview: {
+            type: 'iframe',
+            iframeUrl: "https://gdg.community.dev/gdg-bangkok/"
+        }
     },
     {
         role: "Teaching Assistant",
@@ -31,6 +64,10 @@ export const experiences: Experience[] = [
             "Coordinated a team of student helpers to facilitate hands-on coding labs, ensuring personalized support and successful project completion for all attendees.",
         ],
         type: 'developer',
+        preview: {
+            type: 'canva',
+            canvaUrl: "https://www.canva.com/design/DAHHaczKPnw/5KojmuYyIVf9Cxqg2SEVlg/view",
+        }
     },
     {
         role: "Google Student Ambassador",
@@ -43,6 +80,10 @@ export const experiences: Experience[] = [
             "Leading workshops and initiatives to empower students with cutting-edge technology.",
         ],
         type: 'developer',
+        preview: {
+            type: 'iframe',
+            iframeUrl: "/experiences/gsa"
+        }
     },
     {
         role: "Editor & Content Creator",
@@ -53,6 +94,10 @@ export const experiences: Experience[] = [
             "Delivered script-written and edited 50+ short-form video contents for clients and Micrubik.",
         ],
         type: 'other',
+        preview: {
+            type: 'youtube',
+            youtubeId: "UZKNBpM7-aU",
+        }
     },
     {
         role: "Lecturer",
@@ -63,6 +108,10 @@ export const experiences: Experience[] = [
             "Conducted a free fundamental Java programming course for high school students about the importance of computer programming, data structures, if-else conditions, and loops.",
         ],
         type: 'developer',
+        preview: {
+            type: 'canva',
+            canvaUrl: "https://www.canva.com/design/DAHKpIF0xlI/44JKg9HBCaGOANDaZ6RzPA/view",
+        }
     },
     {
         role: "Teaching Assistant",
@@ -75,5 +124,9 @@ export const experiences: Experience[] = [
             "Guided students through daily coding challenges and final project design, reinforcing logical thinking and core software engineering best practices.",
         ],
         type: 'developer',
+        preview: {
+            type: 'canva',
+            canvaUrl: "https://www.canva.com/design/DAG0d9bHp2Y/DMEy5QtsHTe3UtHCFCv1lA/view",
+        }
     },
 ];

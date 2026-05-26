@@ -32,6 +32,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${jetbrainsMono.variable} ${vt323.variable} antialiased font-sans`}
+        suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"

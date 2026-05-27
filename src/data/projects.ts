@@ -9,6 +9,15 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        title: "Dummio | Virtual IoT Device Simulator & Python Service",
+        description:
+            "An open-source virtual IoT device simulation engine and Python package designed for ML pipelines, IoT streaming, and anomaly detection testing. Features Wind Turbine, Commercial HVAC, and Industrial Motor presets with real-time MQTT integration, ground truth anomaly logging, and a premium Streamlit visualization dashboard.",
+        tags: ["Python", "FastAPI", "WebSockets", "MQTT", "Streamlit", "Poetry"],
+        link: "https://github.com/SeanNachapat/dummio",
+        image: "https://raw.githubusercontent.com/SeanNachapat/Dummio/main/imgs/dummio.png",
+        flagship: true,
+    },
+    {
         title: "Stacked | Digital Sticker Bomb for developers",
         description:
             "specialized platform for developers to aggregate and showcase their verified technical achievements. By centralizing badges, certifications, and hackathon wins into a single, authenticated profile, StackedLabs moves beyond the traditional resume to provide a high-trust, visual representation of a developer’s true skill set and growth.",
@@ -23,16 +32,7 @@ export const projects: Project[] = [
             "Ducksy is an intelligent desktop companion powered by Gemini 3 that lives on your screen to help you navigate complex tasks, summarize meetings, and provide real-time assistance.",
         tags: ["Electron", "React", "Gemini 3", "Framer Motion", "Javascript"],
         link: "https://ducksy-gemini-3-hackathon-2026-duck.vercel.app/",
-        image: "/Ducksy.png",
-        flagship: true,
-    },
-    {
-        title: "Loom Analytics | Analytics Platform for Creators",
-        description:
-            "Loom Analytics is a web application for creators to analyze their content and provide insights to improve their engagement.",
-        tags: ["React", "NEXT.js", "MongoDB", "GeminiAPI"],
-        link: "https://github.com/SeanNachapat/loom-analytics",
-        image: "/loom.png",
+        image: "/Ducksy.png"
     },
     {
         title: "Go-Shrimp | Smart Farm Management System",

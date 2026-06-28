@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 interface ProjectCardProps {
+  id: string;
   title: string;
   description: string;
   tags: string[];
@@ -12,7 +13,7 @@ interface ProjectCardProps {
   flagship?: boolean;
 }
 
-export default function ProjectCard({ title, description, tags, link, index, image, flagship }: ProjectCardProps & { image?: string }) {
+export default function ProjectCard({ id, title, description, tags, link, index, image, flagship }: ProjectCardProps & { image?: string }) {
   const grainImage = "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E\")";
 
   return (
@@ -22,7 +23,7 @@ export default function ProjectCard({ title, description, tags, link, index, ima
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={`group relative overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800 ${flagship ? "h-[350px] lg:h-[500px]" : "h-[300px] lg:h-[450px]"}`}
     >
-      <Link href={link} className="block h-full relative">
+      <Link href={`/projects/${id}`} className="block h-full relative">
         {/* Background Image */}
         <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
            <img 

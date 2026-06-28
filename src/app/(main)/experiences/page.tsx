@@ -601,7 +601,13 @@ function renderPreview(exp: Experience, isHovered: boolean) {
       <div className="relative w-full h-full bg-neutral-900 overflow-hidden">
         <iframe
           src={url}
-          className="w-full h-full border-0 absolute inset-0"
+          style={{
+            width: '500%',
+            height: '500%',
+            transform: 'scale(0.2)',
+            transformOrigin: 'top left',
+          }}
+          className="border-0 absolute inset-0"
           title="Embed Preview"
         />
       </div>

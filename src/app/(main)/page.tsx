@@ -29,7 +29,7 @@ export default function Home() {
                      & AI Researcher
                   </h2>
                   <p className="max-w-xl text-lg lg:text-xl text-muted leading-relaxed font-mono">
-                     I'm Sean, a passionate developer, and a machine learning enthusiast. Currently, a 1st year Computer Science student, Teaching Assistance and Lecturer at KMITL.
+                     I&apos;m Sean, a passionate developer, and a machine learning enthusiast. Currently, a 2nd year Computer Science student, Teaching Assistance and Lecturer at KMITL.
                   </p>
                   <a href="/experiences/gsa">
                     <motion.img 

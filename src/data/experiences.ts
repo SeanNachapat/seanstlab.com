@@ -39,10 +39,25 @@ export interface Experience {
 
 export const experiences: Experience[] = [
     {
+        role: "Head of Media Team",
+        period: "June 2026 - Present",
+        organization: "Department of Computer Science, KMITL",
+        link: "https://www.science.kmitl.ac.th/",
+        details: [
+            "Lead a team of content creators to produce engaging content and promotional materials for the department's social media platforms.",
+            "Managed content pipelines and delegated tasks effectively among team members to meet tight deadlines for academic and promotional events.",
+        ],
+        type: 'other',
+        preview: {
+            type: 'iframe',
+            iframeUrl: "https://www.science.kmitl.ac.th/"
+        }
+    },
+    {
         role: "Content Creator",
         period: "May 2026 - Present",
         organization: "Google Developer Group Bangkok, GDG",
-        link: "https://gdg.community.dev/gdg-bangkok/",
+        link: "https://gdgbangkok.dev/",
         details: [
             "Creating engaging content and promotional materials for GDG Bangkok's social media platforms.",
             "Fostering a vibrant community of AI enthusiasts and developers.",
@@ -50,7 +65,7 @@ export const experiences: Experience[] = [
         type: 'other',
         preview: {
             type: 'iframe',
-            iframeUrl: "https://gdg.community.dev/gdg-bangkok/"
+            iframeUrl: "https://gdgbangkok.dev/"
         }
     },
     {

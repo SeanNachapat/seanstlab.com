@@ -38,12 +38,12 @@ export default function AboutPage() {
               </div>
               
               <p>
-                Hey! I'm <span className="font-bold text-foreground">Sean</span>, a passionate developer and machine learning enthusiast. 
-                Currently, I am a 1st year Computer Science student, Teaching Assistant, and Lecturer at KMITL.
+                Hey! I&apos;m <span className="font-bold text-foreground">Sean</span>, a passionate developer and machine learning enthusiast. 
+                Currently, I am a 2nd year Computer Science student, Teaching Assistant, and Lecturer at KMITL.
               </p>
               <p>
-                I'm researching the topic of <span className="text-foreground italic">Robotics</span> and <span className="text-foreground italic">Artificial Intelligence</span>. 
-                I'm open to collaborative projects.
+                I&apos;m researching the topic of <span className="text-foreground italic">Robotics</span> and <span className="text-foreground italic">Artificial Intelligence</span>. 
+                I&apos;m open to collaborative projects.
               </p>
             </div>
 

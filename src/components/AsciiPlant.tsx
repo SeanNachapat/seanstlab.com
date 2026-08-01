@@ -23,8 +23,8 @@ export default function AsciiPlant() {
     // =====================
 
     const render = () => {
-      const width = 80;
-      const height = 60;
+      const width = 120;
+      const height = 80;
       const zBuffer = new Array(width * height).fill(0);
       const output = new Array(width * height).fill(" ");
 
@@ -146,7 +146,7 @@ export default function AsciiPlant() {
   return (
     <pre 
         ref={preRef} 
-        className="text-[5px] lg:text-[12px] leading-[5px] lg:leading-[12px] whitespace-pre font-mono text-gray-500 select-none overflow-hidden"
+        className="text-[7px] lg:text-[12px] leading-[5px] lg:leading-[12px] whitespace-pre font-mono text-gray-500 select-none overflow-hidden"
         style={{
           maskImage: "radial-gradient(circle, black 10%, transparent 90%)",
           WebkitMaskImage: "radial-gradient(circle, black 10%, transparent 90%)",

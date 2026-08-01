@@ -26,25 +26,11 @@ export default function Home() {
                   <h2 className="text-3xl lg:text-3xl text-foreground font-mono">
                      Computer Science Student 
                      <br />
-                     & AI Researcher
+                     & AI Larper
                   </h2>
                   <p className="max-w-xl text-lg lg:text-xl text-muted leading-relaxed font-mono">
-                     I&apos;m Sean, a passionate developer, and a machine learning enthusiast. Currently, a 2nd year Computer Science student, Teaching Assistance and Lecturer at KMITL.
+                     I'm Sean, a passionate developer, and a machine learning enthusiast. Currently, a 2nd year Computer Science student, Teaching Assistance and Lecturer at KMITL.
                   </p>
-                  <a href="/experiences/gsa">
-                    <motion.img 
-                      src="https://framerusercontent.com/images/8wTRIiSVSyfl0uTe07aNw7eiRJ0.png" 
-                      width={120} 
-                      height={120} 
-                      className="cursor-pointer"
-                      whileHover={{ 
-                          scale: 1.1, 
-                          rotate: 5,
-                          transition: { type: "spring", stiffness: 400, damping: 10 }
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                    />
-                  </a>
                </motion.div>
             </div>
          </div> 

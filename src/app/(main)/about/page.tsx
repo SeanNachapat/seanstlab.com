@@ -58,7 +58,7 @@ export default function AboutPage() {
                 </h3>
               </Link>
               <div className="space-y-6">
-                {experiences.map((exp, index) => (
+                {experiences.slice(0, 3).map((exp, index) => (
                   <div key={index} className="bg-card p-6 rounded-xl border border-border transition-hover hover:border-muted">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-bold text-lg text-foreground">{exp.role}</h4>

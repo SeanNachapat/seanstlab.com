@@ -1,12 +1,96 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { socials } from "@/data/socials";
 import AsciiPlant from "@/components/AsciiPlant";
 import Link from "next/link";
 
+interface Sticker {
+    id: number;
+    title: string;
+    imageUrl?: string;
+    svgContent?: React.ReactNode;
+    position: { top?: string; bottom?: string; left?: string; right?: string };
+    rotate: number;
+    scale: number;
+}
+
 export default function LinkPage() {
+    const [stickers, setStickers] = useState<Sticker[]>([]);
+
+    useEffect(() => {
+        const availablePositions = [
+            { top: "-28px", left: "-8px" },
+            { top: "-30px", right: "12px" },
+            { bottom: "-28px", left: "20px" },
+            { bottom: "-30px", right: "-10px" },
+            { top: "-26px", left: "38%" },
+            { bottom: "-26px", right: "35%" },
+            { top: "15%", left: "-26px" },
+            { bottom: "20%", right: "-28px" },
+            { top: "-24px", right: "32%" },
+            { bottom: "-24px", left: "55%" },
+        ];
+
+        const allBadges = [
+            {
+                title: "Quickdraw",
+                imageUrl: "https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone1.png",
+            },
+            {
+                title: "Stargazer",
+                imageUrl: "https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/Star-Struck/PNG/StarStruck_Gold.png",
+            },
+            {
+                title: "Pull Shark",
+                imageUrl: "https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/Pull-Shark/PNG/PullShark_Gold.png",
+            },
+            {
+                title: "Pair Extraordinaire",
+                imageUrl: "https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire.png",
+            },
+            {
+                title: "YOLO",
+                imageUrl: "https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/YOLO/PNG/YOLO_Badge.png",
+            },
+            {
+                title: "Galaxy Brain",
+                imageUrl: "https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/Galaxy-Brain/PNG/GalaxyBrain.png",
+            },
+            {
+                title: "Public Sponsor",
+                imageUrl: "https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/GitHub-Sponsor/PNG/GitHubSponsorBadge.png",
+            },
+            {
+                title: "Arctic Vault",
+                imageUrl: "https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/2020-Arctic-Code-Vault-Contributor/PNG/2020ArcticCodeVaultBadge.png",
+            }
+        ];
+
+        // Shuffle positions and badges every refresh
+        const shuffledPositions = [...availablePositions].sort(() => Math.random() - 0.5);
+        const shuffledBadges = [...allBadges].sort(() => Math.random() - 0.5);
+
+        const count = Math.floor(Math.random() * 2) + 5; // 5 or 6 badges
+        const generated: Sticker[] = [];
+
+        for (let i = 0; i < count; i++) {
+            const badge = shuffledBadges[i];
+            generated.push({
+                id: i,
+                title: badge.title,
+                imageUrl: badge.imageUrl,
+                position: shuffledPositions[i],
+                rotate: Math.floor(Math.random() * 50) - 25, // -25deg to 25deg
+                scale: 0.9 + Math.random() * 0.3, // 0.9 to 1.2
+            });
+        }
+
+        setStickers(generated);
+    }, []);
+
     return (
         <main className="min-h-screen bg-[#0a0a0a] text-white flex flex-col items-center px-6 py-20 relative overflow-hidden">
             <div className="absolute bottom-0 right-0 opacity-20 pointer-events-none">
@@ -31,20 +115,6 @@ export default function LinkPage() {
                     <p className="font-mono text-sm text-gray-500 max-w-[300px] mb-6">
                         Computer Science Student @ KMITL & AI Researcher
                     </p>
-                    <a href="/experiences/gsa" target="_blank" rel="noopener noreferrer">
-                        <motion.img 
-                            src="https://framerusercontent.com/images/8wTRIiSVSyfl0uTe07aNw7eiRJ0.png" 
-                            width={80} 
-                            height={80} 
-                            className="rounded-full cursor-pointer"
-                            whileHover={{ 
-                                scale: 1.1, 
-                                rotate: 5,
-                                transition: { type: "spring", stiffness: 400, damping: 10 }
-                            }}
-                            whileTap={{ scale: 0.95 }}
-                        />
-                    </a>
                 </motion.div>
 
                 <motion.div
@@ -57,12 +127,38 @@ export default function LinkPage() {
                         href="https://stacked.seanstlab.com/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative group block w-full p-6 rounded-sm border-2 border-[#72E182] bg-[#72E182]/5 hover:bg-[#72E182]/10 transition-all duration-300 overflow-hidden"
+                        className="relative group block w-full p-6 rounded-sm border-2 border-[#72E182] bg-[#72E182]/5 hover:bg-[#72E182]/10 transition-all duration-300 overflow-visible"
                     >
                         {/* Animated background glow */}
                         <div className="absolute inset-0 bg-[#72E182]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl -z-10" />
+
+                        {/* Random GitHub Achievement PNGs and Google Badges stacked over the button */}
+                        {stickers.map((sticker) => (
+                            <motion.div
+                                key={sticker.id}
+                                initial={{ scale: 0, opacity: 0 }}
+                                animate={{ scale: sticker.scale, opacity: 1, rotate: sticker.rotate }}
+                                transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 + sticker.id * 0.05 }}
+                                style={{
+                                    position: "absolute",
+                                    ...sticker.position,
+                                    zIndex: 20,
+                                }}
+                                className="pointer-events-none drop-shadow-[0_6px_10px_rgba(0,0,0,0.7)]"
+                            >
+                                {sticker.imageUrl && !sticker.svgContent ? (
+                                    <img
+                                        src={sticker.imageUrl}
+                                        alt={sticker.title}
+                                        className="w-14 h-14 object-contain filter drop-shadow-md"
+                                    />
+                                ) : (
+                                    sticker.svgContent
+                                )}
+                            </motion.div>
+                        ))}
                         
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-4 relative z-10">
                             <div className="relative w-12 h-12 shrink-0">
                                 <img 
                                     src="/stacked.png" 

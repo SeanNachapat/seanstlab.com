@@ -39,6 +39,23 @@ export interface Experience {
 
 export const experiences: Experience[] = [
     {
+        role: "Lead Teaching Assistant",
+        period: "August 2026",
+        organization: "Department of Computer Science, KMITL",
+        link: "https://cscamp.net/",
+        details: [
+            "Served as Lead Teaching Assistant for CS PROF DEV 2026: Programming Fundamentals and Data Structures, overseeing instructional delivery, curriculum design, and TA operations.",
+            "Curriculum Architecture: Engineered the complete course syllabus from scratch, developing hands-on programming assignments, data structure lab modules, and structured problem sets.",
+            "TA Training & Supervision: Led and onboarded a team of 8 TAs, establishing standardized code-review rubrics, classroom debugging protocols, and evaluation workflows.",
+            "Exam Administration: Authored, benchmarked, and supervised midterm and final practical programming assessments, ensuring rigorous test cases and academic integrity.",
+        ],
+        type: 'developer',
+        preview: {
+            type: 'canva',
+            canvaUrl: "https://www.canva.com/design/DAHROqOfwPY/DU7bE4A0xdqRRN_TTHw5HA/view",
+        }
+    },
+    {
         role: "Head of Media Team",
         period: "June 2026 - Present",
         organization: "Department of Computer Science, KMITL",

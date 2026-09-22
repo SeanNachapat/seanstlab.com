@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #D7D3D1;
   --foreground: #111111;
   --card: #f9f9f9;
   --border: #e5e5e5;
   --muted: #555555;
 }
 
-.dark {
+/* .dark {
   --background: #111111;
   --foreground: #ffffff;
   --card: #111111;
   --border: #222222;
   --muted: #888888;
-}
+} */
 
 @theme inline {
   --color-background: var(--background);
@@ -22,14 +22,15 @@
   --color-card: var(--card);
   --color-border: var(--border);
   --color-muted: var(--muted);
-  --font-sans: var(--font-mono);
-  --font-mono: var(--font-mono);
-  --font-pixel: var(--font-pixel);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-sans);
+  --font-pixel: var(--font-sans);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans), serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -65,4 +66,19 @@ body {
 
 .animate-grain {
   animation: grain 0.8s steps(1) infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
 }

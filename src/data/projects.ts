@@ -2,6 +2,7 @@ export interface Project {
     id: string;
     title: string;
     description: string;
+    shortDescription?: string;
     tags: string[];
     link: string;
     image: string;
@@ -13,7 +14,8 @@ export interface Project {
 export const projects: Project[] = [
     {
         id: "pinata",
-        title: "Piñata | Virtual IoT Device Simulator & Python Service",
+        title: "Piñata",
+        shortDescription: "Virtual IoT device simulator & Python service",
         description:
             "An open-source virtual IoT device simulation engine and Python package designed for ML pipelines, IoT streaming, and anomaly detection testing. Features Wind Turbine, Commercial HVAC, and Industrial Motor presets with real-time MQTT integration, ground truth anomaly logging, and a premium Streamlit visualization dashboard.",
         tags: ["Python", "FastAPI", "WebSockets", "MQTT", "Streamlit", "Poetry"],
@@ -27,9 +29,10 @@ export const projects: Project[] = [
     },
     {
         id: "stacked",
-        title: "Stacked | Digital Sticker Bomb for developers",
+        title: "Stacked",
+        shortDescription: "Digital sticker bomb for developers",
         description:
-            "specialized platform for developers to aggregate and showcase their verified technical achievements. By centralizing badges, certifications, and hackathon wins into a single, authenticated profile, StackedLabs moves beyond the traditional resume to provide a high-trust, visual representation of a developer’s true skill set and growth.",
+            "Specialized platform for developers to aggregate and showcase their verified technical achievements. By centralizing badges, certifications, and hackathon wins into a single, authenticated profile, StackedLabs moves beyond the traditional resume to provide a high-trust, visual representation of a developer’s true skill set and growth.",
         tags: ["MongoDB", "React", "NEXT.js", "Puppeteer", "Typescript"],
         link: "https://stacked.seanstlab.com/",
         image: "/stacked.png",
@@ -41,7 +44,8 @@ export const projects: Project[] = [
     },
     {
         id: "ducksy",
-        title: "Ducksy | AI Productivity Companion",
+        title: "Ducksy",
+        shortDescription: "AI productivity desktop companion",
         description:
             "Ducksy is an intelligent desktop companion powered by Gemini 3 that lives on your screen to help you navigate complex tasks, summarize meetings, and provide real-time assistance.",
         tags: ["Electron", "React", "Gemini 3", "Framer Motion", "Javascript"],
@@ -54,7 +58,8 @@ export const projects: Project[] = [
     },
     {
         id: "go-shrimp",
-        title: "Go-Shrimp | Smart Farm Management System",
+        title: "Go-Shrimp",
+        shortDescription: "Smart farm management system",
         description:
             "Web Application for Shrimp Farmers integrated with MongoDB database, image classification and disease prediction. Includes real-time water quality monitoring, inventory tracking, and data visualization for pond cycles.",
         tags: ["React", "NEXT.js", "MongoDB", "GeminiAPI"],
@@ -68,6 +73,7 @@ export const projects: Project[] = [
     {
         id: "whatstheword",
         title: "What's The Word",
+        shortDescription: "Gamified English vocab learning for students",
         description:
             "What's The Word? is a web application game for Thai students to practice their knowledge of English vocabulary, categorized by the Common European Framework of Reference for Languages(CEFR).",
         tags: ["React", "Vercel", "NEXT.js", "GeminiAPI"],

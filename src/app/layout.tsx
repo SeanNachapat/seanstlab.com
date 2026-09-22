@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, VT323 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -18,8 +16,8 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Seanstlab | Nachapat Iamphuang",
-  description: "Computer Science Student & AI Researcher at KMITL.",
+  title: "Seanstlab | Nachapat I.",
+  description: "Portfolio of Nachapat Iamphuang.",
 };
 
 export default function RootLayout({
@@ -39,10 +37,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           <SmoothScroll />
           {children}
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

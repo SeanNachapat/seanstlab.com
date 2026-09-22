@@ -1,25 +1,45 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight, Code2, Briefcase, Sparkles, Terminal } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  Code2,
+  Briefcase,
+  Sparkles,
+  Terminal,
+  Library,
+  Copy,
+  Check,
+  Building2,
+} from "lucide-react";
 import AsciiPlant from "@/components/AsciiPlant";
-import { projects } from "@/data/projects";
-import { experiences } from "@/data/experiences";
-import { skillCategories } from "@/data/skills";
+import {
+  projects,
+  experiences,
+  skillCategories,
+  socials,
+  libraryItems,
+} from "@/data";
 
 export default function HomePage() {
-  const flagshipProjects = projects.filter((p) => p.flagship);
-  const recentExperiences = experiences.slice(0, 3);
+  const [copied, setCopied] = useState(false);
+  const email = "sean@seanstlab.com";
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <main className="min-h-screen max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-20 space-y-28">
       {/* ========================================================================= */}
-      {/* SECTION 1: HERO / LANDING BLANKSPACE                                      */}
-      {/* Purpose: Personal intro, tagline, quick call-to-actions, and visual canvas */}
-      {/* Data: Hardcoded profile info or wire to a data/profile.ts file            */}
+      {/* 1. HERO / LANDING SECTION                                                 */}
+      {/* Purpose: Personal branding, title, bio, and visual canvas                 */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[70vh] flex flex-col justify-center border-b border-border/80 pb-20">
+      <section id="hero" className="relative min-h-[75vh] flex flex-col justify-center border-b border-border/80 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Typography & Bio */}
           <div className="lg:col-span-7 space-y-6">
@@ -66,30 +86,30 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap gap-4 pt-2 font-mono text-xs"
             >
-              <Link
-                href="/projects"
+              <a
+                href="#works"
                 className="px-5 py-3 rounded-md bg-foreground text-background font-semibold hover:opacity-90 transition-opacity flex items-center gap-2"
               >
-                <span>VIEW SELECTED WORKS</span>
+                <span>VIEW WORKS</span>
                 <ArrowRight size={14} />
-              </Link>
-              <Link
-                href="/about"
+              </a>
+              <a
+                href="#experiences"
                 className="px-5 py-3 rounded-md border border-border bg-card text-foreground hover:bg-border/40 transition-colors flex items-center gap-2"
               >
-                <span>ABOUT ME</span>
-              </Link>
-              <Link
-                href="/connect"
+                <span>EXPERIENCES</span>
+              </a>
+              <a
+                href="#contact"
                 className="px-5 py-3 rounded-md border border-border text-muted hover:text-foreground transition-colors flex items-center gap-2"
               >
-                <span>LET&apos;S CONNECT</span>
+                <span>GET IN TOUCH</span>
                 <ArrowUpRight size={14} />
-              </Link>
+              </a>
             </motion.div>
           </div>
 
-          {/* Right Column: Interactive Canvas / Ascii Plant Slot */}
+          {/* Right Column: Visual Canvas / Ascii Plant */}
           <div className="lg:col-span-5 flex justify-center items-center relative min-h-[320px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -116,11 +136,10 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 2: FEATURED WORKS / PROJECTS BLANKSPACE                           */}
-      {/* Purpose: Showcase flagship & top selected works                           */}
-      {/* Data: projects (from @/data/projects)                                     */}
+      {/* 2. SELECTED WORKS / PROJECTS SECTION                                      */}
+      {/* Data Source: projects (from @/data)                                       */}
       {/* ========================================================================= */}
-      <section className="space-y-8">
+      <section id="works" className="space-y-8 scroll-mt-24">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-b border-border pb-4">
           <div>
             <span className="font-mono text-xs text-muted uppercase tracking-widest flex items-center gap-1.5 mb-1">
@@ -131,30 +150,26 @@ export default function HomePage() {
               FEATURED PROJECTS
             </h2>
           </div>
-          <Link
-            href="/projects"
-            className="font-mono text-xs text-muted hover:text-foreground flex items-center gap-1 transition-colors"
-          >
-            <span>VIEW ALL ({projects.length}) PROJECTS</span>
-            <ArrowRight size={14} />
-          </Link>
+          <span className="font-mono text-xs px-3 py-1 rounded-full border border-border bg-card text-muted">
+            {projects.length} PROJECTS LOADED
+          </span>
         </div>
 
-        {/* Projects Blankspace Grid */}
+        {/* Projects Grid Blankspace */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {flagshipProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <motion.article
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
               className="group relative rounded-xl border border-border bg-card p-6 flex flex-col justify-between hover:border-foreground/40 transition-all duration-300"
             >
               <div className="space-y-4">
                 <div className="flex justify-between items-start">
                   <span className="text-xs font-mono text-muted uppercase tracking-wider">
-                    {project.year} · FLAGSHIP
+                    {project.year} {project.flagship && "· FLAGSHIP"}
                   </span>
                   <a
                     href={project.link}
@@ -169,9 +184,7 @@ export default function HomePage() {
 
                 <div>
                   <h3 className="font-pixel text-2xl sm:text-3xl text-foreground group-hover:text-muted transition-colors">
-                    <Link href={`/projects/${project.id}`}>
-                      {project.title.split("|")[0].trim()}
-                    </Link>
+                    {project.title.split("|")[0].trim()}
                   </h3>
                   {project.title.includes("|") && (
                     <p className="font-mono text-xs text-muted mt-1">
@@ -197,13 +210,15 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <Link
-                  href={`/projects/${project.id}`}
-                  className="font-mono text-xs text-foreground hover:underline flex items-center gap-1"
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs text-foreground hover:underline flex items-center gap-1 font-semibold"
                 >
-                  <span>Details</span>
-                  <span>→</span>
-                </Link>
+                  <span>Open Project</span>
+                  <ArrowUpRight size={12} />
+                </a>
               </div>
             </motion.article>
           ))}
@@ -211,11 +226,10 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 3: RECENT EXPERIENCES BLANKSPACE                                  */}
-      {/* Purpose: Quick chronological timeline / highlight of experiences          */}
-      {/* Data: experiences (from @/data/experiences)                               */}
+      {/* 3. EXPERIENCES TIMELINE / LIST SECTION                                    */}
+      {/* Data Source: experiences (from @/data)                                    */}
       {/* ========================================================================= */}
-      <section className="space-y-8">
+      <section id="experiences" className="space-y-8 scroll-mt-24">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-b border-border pb-4">
           <div>
             <span className="font-mono text-xs text-muted uppercase tracking-widest flex items-center gap-1.5 mb-1">
@@ -223,71 +237,91 @@ export default function HomePage() {
               CAREER & ACADEMIA
             </span>
             <h2 className="font-pixel text-4xl sm:text-5xl text-foreground">
-              RECENT EXPERIENCES
+              EXPERIENCES
             </h2>
           </div>
-          <Link
-            href="/experiences"
-            className="font-mono text-xs text-muted hover:text-foreground flex items-center gap-1 transition-colors"
-          >
-            <span>VIEW FULL TIMELINE ({experiences.length})</span>
-            <ArrowRight size={14} />
-          </Link>
+          <span className="font-mono text-xs px-3 py-1 rounded-full border border-border bg-card text-muted">
+            {experiences.length} ROLES RECORDED
+          </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-4">
-          {recentExperiences.map((exp, index) => (
+        <div className="grid grid-cols-1 gap-6">
+          {experiences.map((exp, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.08 }}
-              className="p-6 rounded-xl border border-border bg-card flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-foreground/30 transition-all"
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              className="p-6 sm:p-8 rounded-xl border border-border bg-card flex flex-col md:flex-row justify-between gap-6 hover:border-foreground/30 transition-all"
             >
-              <div className="space-y-1.5 max-w-2xl">
-                <div className="flex items-center gap-2 font-mono text-xs text-muted">
-                  <span>{exp.period}</span>
-                  <span>•</span>
-                  <span className="uppercase">{exp.type}</span>
+              <div className="space-y-3 max-w-3xl">
+                <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
+                  <span className="px-2.5 py-0.5 rounded bg-background border border-border text-muted">
+                    {exp.period}
+                  </span>
+                  <span
+                    className={`px-2 py-0.5 rounded text-[10px] font-mono uppercase ${
+                      exp.type === "developer"
+                        ? "bg-blue-500/10 text-blue-500 border border-blue-500/20"
+                        : "bg-amber-500/10 text-amber-500 border border-amber-500/20"
+                    }`}
+                  >
+                    {exp.type}
+                  </span>
                 </div>
-                <h3 className="font-pixel text-2xl text-foreground">
+
+                <h3 className="font-pixel text-2xl sm:text-3xl text-foreground">
                   {exp.role}
                 </h3>
+
                 <a
                   href={exp.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs text-muted hover:text-foreground inline-flex items-center gap-1"
+                  className="font-mono text-xs sm:text-sm text-muted hover:text-foreground inline-flex items-center gap-1.5 transition-colors"
                 >
+                  <Building2 size={14} />
                   <span>{exp.organization}</span>
-                  <ArrowUpRight size={12} />
+                  {exp.link && exp.link !== "#" && <ArrowUpRight size={12} />}
                 </a>
-                <p className="font-mono text-xs text-muted line-clamp-2 pt-2">
-                  {exp.details[0]}
-                </p>
+
+                <ul className="space-y-2 pt-2">
+                  {exp.details.map((detail, dIdx) => (
+                    <li
+                      key={dIdx}
+                      className="flex items-start gap-2 font-mono text-xs sm:text-sm text-muted leading-relaxed"
+                    >
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-foreground/40 shrink-0" />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="shrink-0">
-                <Link
-                  href="/experiences"
-                  className="px-4 py-2 rounded border border-border text-xs font-mono hover:bg-border/30 transition-colors inline-flex items-center gap-1"
-                >
-                  <span>Preview</span>
-                  <span>↗</span>
-                </Link>
-              </div>
+              {exp.link && exp.link !== "#" && (
+                <div className="shrink-0 self-start md:self-center">
+                  <a
+                    href={exp.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded border border-border text-xs font-mono hover:bg-border/30 transition-colors inline-flex items-center gap-1 text-foreground"
+                  >
+                    <span>Link</span>
+                    <ArrowUpRight size={12} />
+                  </a>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 4: SKILLS & TOOLKIT SNAPSHOT                                      */}
-      {/* Purpose: Overview of technical competencies and favorite tools            */}
-      {/* Data: skillCategories (from @/data/skills)                                 */}
+      {/* 4. TECHNICAL SKILLS & STACK SECTION                                       */}
+      {/* Data Source: skillCategories (from @/data)                                */}
       {/* ========================================================================= */}
-      <section className="space-y-8">
+      <section id="skills" className="space-y-8 scroll-mt-24">
         <div className="border-b border-border pb-4">
           <span className="font-mono text-xs text-muted uppercase tracking-widest flex items-center gap-1.5 mb-1">
             <Sparkles size={14} />
@@ -328,36 +362,114 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 5: CONNECT CALLOUT                                                */}
-      {/* Purpose: Prompt visitors to collaborate or contact                        */}
-      {/* Data: socials (from @/data/socials)                                       */}
+      {/* 5. GEAR & LIBRARY SECTION                                                 */}
+      {/* Data Source: libraryItems (from @/data)                                   */}
       {/* ========================================================================= */}
-      <section className="p-8 sm:p-12 rounded-2xl border border-border bg-card/60 backdrop-blur-xs flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-        <div className="space-y-2 max-w-xl">
-          <h2 className="font-pixel text-3xl sm:text-4xl text-foreground">
-            LET&apos;S BUILD SOMETHING TOGETHER
-          </h2>
-          <p className="font-mono text-xs sm:text-sm text-muted leading-relaxed">
-            Interested in collaboration, AI research discussions, or just want to say hi?
-            Feel free to reach out across any platform.
-          </p>
+      <section id="gear" className="space-y-8 scroll-mt-24">
+        <div className="flex justify-between items-end border-b border-border pb-4">
+          <div>
+            <span className="font-mono text-xs text-muted uppercase tracking-widest flex items-center gap-1.5 mb-1">
+              <Library size={14} />
+              HARDWARE & LITERATURE
+            </span>
+            <h2 className="font-pixel text-4xl sm:text-5xl text-foreground">
+              LIBRARY & GEAR
+            </h2>
+          </div>
+          <span className="font-mono text-xs px-3 py-1 rounded-full border border-border bg-card text-muted">
+            {libraryItems.length} ITEMS
+          </span>
         </div>
 
-        <div className="flex flex-wrap gap-3 font-mono text-xs">
-          <Link
-            href="/connect"
-            className="px-6 py-3 rounded-md bg-foreground text-background font-bold hover:opacity-90 transition-opacity flex items-center gap-2"
-          >
-            <span>CONNECT WITH ME</span>
-            <ArrowRight size={14} />
-          </Link>
-          <a
-            href="mailto:sean@seanstlab.com"
-            className="px-6 py-3 rounded-md border border-border hover:bg-border/30 transition-colors flex items-center gap-2"
-          >
-            <span>EMAIL</span>
-            <ArrowUpRight size={14} />
-          </a>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {libraryItems.map((item) => (
+            <div
+              key={item.id}
+              className="p-6 rounded-xl border border-border bg-card flex flex-col justify-between space-y-4 hover:border-foreground/30 transition-all"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-background border border-border text-muted uppercase">
+                  {item.category}
+                </span>
+                <h3 className="font-pixel text-2xl text-foreground">
+                  {item.name}
+                </h3>
+                <p className="font-mono text-xs text-muted leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+
+              {item.link && (
+                <div className="pt-2 border-t border-border/60">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs text-foreground hover:underline inline-flex items-center gap-1"
+                  >
+                    <span>Product Link</span>
+                    <ArrowUpRight size={12} />
+                  </a>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 6. CONTACT & CONNECT SECTION                                              */}
+      {/* Data Source: socials (from @/data)                                        */}
+      {/* ========================================================================= */}
+      <section id="contact" className="space-y-8 scroll-mt-24">
+        <div className="p-8 sm:p-12 rounded-2xl border border-border bg-card/60 backdrop-blur-xs flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <div className="space-y-2 max-w-xl">
+            <h2 className="font-pixel text-3xl sm:text-4xl text-foreground">
+              LET&apos;S BUILD SOMETHING TOGETHER
+            </h2>
+            <p className="font-mono text-xs sm:text-sm text-muted leading-relaxed">
+              Interested in collaboration, AI research discussions, or just want to say hi?
+              Feel free to reach out across any platform.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3 font-mono text-xs">
+            <button
+              onClick={handleCopyEmail}
+              className="px-5 py-3 rounded-md bg-card border border-border hover:bg-border/30 text-foreground transition-colors flex items-center gap-2"
+            >
+              {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
+              <span>{copied ? "COPIED" : "COPY EMAIL"}</span>
+            </button>
+            <a
+              href={`mailto:${email}`}
+              className="px-6 py-3 rounded-md bg-foreground text-background font-bold hover:opacity-90 transition-opacity flex items-center gap-2"
+            >
+              <span>SEND EMAIL</span>
+              <ArrowUpRight size={14} />
+            </a>
+          </div>
+        </div>
+
+        {/* Social Network Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          {socials.map((social) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl border border-border bg-card hover:border-foreground/40 transition-all flex flex-col items-center justify-center gap-2 text-center group"
+              >
+                <Icon size={18} className="text-muted group-hover:text-foreground transition-colors" />
+                <span className="font-pixel text-lg text-foreground group-hover:text-muted transition-colors">
+                  {social.name}
+                </span>
+              </a>
+            );
+          })}
         </div>
       </section>
     </main>

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, VT323 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
@@ -16,8 +18,8 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Seanstlab",
-  description: "Seanstlab by Nachapat I.",
+  title: "Seanstlab | Nachapat Iamphuang",
+  description: "Computer Science Student & AI Researcher at KMITL.",
 };
 
 export default function RootLayout({
@@ -27,9 +29,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      </head>
       <body
         className={`${jetbrainsMono.variable} ${vt323.variable} antialiased font-sans`}
         suppressHydrationWarning
@@ -40,7 +39,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
+          <SmoothScroll />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

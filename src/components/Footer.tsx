@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowUp, ArrowUpRight } from "lucide-react";
 import { socials } from "@/data/socials";
 
@@ -52,20 +51,10 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom Legal & Colophon */}
+        {/* Bottom Legal */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pt-4 border-t border-border/40 font-mono text-[11px] text-muted/70">
-          <p>© {new Date().getFullYear()} Sean Nachapat. Open-source portfolio.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/link" className="hover:text-foreground transition-colors">
-              Bio Link
-            </Link>
-            <span>•</span>
-            <Link href="/connect" className="hover:text-foreground transition-colors">
-              Contact
-            </Link>
-            <span>•</span>
-            <span>Bangkok, Thailand</span>
-          </div>
+          <p>© {new Date().getFullYear()} Nachapat Iamphuang. All data and framework preserved.</p>
+          <span>Bangkok, Thailand (UTC+7)</span>
         </div>
       </div>
     </footer>

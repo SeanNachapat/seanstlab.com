@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, ShieldCheck, Zap, Users, Sparkles } from "lucide-react";
+import { ArrowLeft, ShieldCheck, Zap, Users, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 import { useState } from "react";
@@ -217,7 +217,7 @@ export default function GSAPage() {
                                 Since joining the program in February 2026, my focus has been on democratizing access to cutting-edge AI tools. I believe that technology is the ultimate equalizer, and as an ambassador, I strive to ensure every student at KMITL has the opportunity to learn and build.
                             </p>
                             <p>
-                                I envision a campus where innovation isn't just a buzzword, but a daily practice, where students from all backgrounds feel empowered to turn their ideas into reality using the best tools available.
+                                I envision a campus where innovation isn&apos;t just a buzzword, but a daily practice, where students from all backgrounds feel empowered to turn their ideas into reality using the best tools available.
                             </p>
                         </motion.div>
                     </div>

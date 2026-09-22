@@ -69,26 +69,30 @@ export default function LinkPage() {
             }
         ];
 
-        // Shuffle positions and badges every refresh
-        const shuffledPositions = [...availablePositions].sort(() => Math.random() - 0.5);
-        const shuffledBadges = [...allBadges].sort(() => Math.random() - 0.5);
+        // Shuffle positions and badges after mount to prevent hydration mismatch
+        const frameId = requestAnimationFrame(() => {
+            const shuffledPositions = [...availablePositions].sort(() => Math.random() - 0.5);
+            const shuffledBadges = [...allBadges].sort(() => Math.random() - 0.5);
 
-        const count = Math.floor(Math.random() * 2) + 5; // 5 or 6 badges
-        const generated: Sticker[] = [];
+            const count = Math.floor(Math.random() * 2) + 5; // 5 or 6 badges
+            const generated: Sticker[] = [];
 
-        for (let i = 0; i < count; i++) {
-            const badge = shuffledBadges[i];
-            generated.push({
-                id: i,
-                title: badge.title,
-                imageUrl: badge.imageUrl,
-                position: shuffledPositions[i],
-                rotate: Math.floor(Math.random() * 50) - 25, // -25deg to 25deg
-                scale: 0.9 + Math.random() * 0.3, // 0.9 to 1.2
-            });
-        }
+            for (let i = 0; i < count; i++) {
+                const badge = shuffledBadges[i];
+                generated.push({
+                    id: i,
+                    title: badge.title,
+                    imageUrl: badge.imageUrl,
+                    position: shuffledPositions[i],
+                    rotate: Math.floor(Math.random() * 50) - 25, // -25deg to 25deg
+                    scale: 0.9 + Math.random() * 0.3, // 0.9 to 1.2
+                });
+            }
 
-        setStickers(generated);
+            setStickers(generated);
+        });
+
+        return () => cancelAnimationFrame(frameId);
     }, []);
 
     return (

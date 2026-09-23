@@ -60,49 +60,154 @@ export default function HomeClient({ blogs }: HomeClientProps) {
               ) : (
                 <div className="space-y-4 animate-fadeIn">
                   <p>
-                    Hi, I&apos;m Nachapat (Sean). I&apos;m a computer science
-                    enthusiast and software developer studying at{" "}
+                    The internet, and a messy desk full of loose wires, taught me I could build anything.
+                  </p>
+
+                  <p>
+                    Long before I wrote my first line of Python, I spent my childhood obsessed with what was happening on the creative side of the screen. In high school, I wasn&apos;t just gaming; I was editing highlight videos for my friends and losing sleep over keyframes. I loved visual rhythm, precise sound design, and the raw energy of fast-paced storytelling.
+                  </p>
+
+                  <p>
+                    At the time, my backup plan was completely creative: if I didn&apos;t get accepted into Computer Science, I was going all in on media. I dreamed of becoming a graphic designer, making custom vector art in Illustrator, editing commercial videos, or even directing movies.
+                  </p>
+
+                  <div className="flex justify-center items-center gap-3">
+                    <img
+                      src="/randomChild.jpg"
+                      alt="Early creative and tinkering days"
+                      className="hover:scale-105 transition-transform duration-300 rounded-lg border border-border bg-card object-cover w-1/2 aspect-square"
+                    />
+                    <img
+                      src="/portrait.png"
+                      alt="Graphic portrait illustration"
+                      className="hover:scale-105 transition-transform duration-300 rounded-lg border border-border bg-card object-contain h-1/4 w-1/4"
+                    />
+                  </div>
+
+                  <p>
+                    Fortunately, my first choice worked out. I was accepted to study Computer Science at the School of Science at{" "}
                     <a
-                      href="https://www.science.kmitl.ac.th/"
+                      href="https://www.kmitl.ac.th/"
                       target="_blank"
                       rel="noreferrer"
                       className="underline underline-offset-2 text-foreground font-medium hover:text-muted transition-colors"
                     >
-                      KMITL
+                      King Mongkut&apos;s Institute of Technology Ladkrabang
+                    </a>{" "}
+                    (KMITL).
+                  </p>
+
+                  <p>
+                    University gave me the formal foundation: Java, Python, algorithms, and systems design. But I quickly realized that true learning happens outside the lecture hall, through the same self-taught curiosity that drove my editing days.
+                  </p>
+
+                  <p>
+                    During my freshman year, I got my hands on a secondhand Lenovo ThinkCentre mini PC and turned my room into a tiny server rack. I set up Ubuntu Server, Proxmox, Docker containers, and Cloudflare tunnels to host my own internal services. From there, I branched into physical computing: ESP32 microcontrollers, Raspberry Pis, and Waveshare E-ink displays.
+                  </p>
+
+                  <p>
+                    I loved the tactility of hardware. Watching a low-power E-ink screen update with live data over MQTT because of code running on my little ThinkCentre was pure magic to me.
+                  </p>
+
+                  <p>
+                    Right around the time I felt comfortable building full-stack web apps with Next.js and React, software engineering hit a massive turning point: modern Artificial Intelligence.
+                  </p>
+
+                  <p>
+                    Suddenly, computers weren&apos;t just executing rigid, deterministic logic. They could interpret messy, unstructured context. They could reason through intent.
+                  </p>
+
+                  <p>
+                    I didn&apos;t want to just play with web chatbots or wrap an API call in a shiny landing page. I wanted to understand how models route tasks, how context windows are structured, and how agentic systems actually operate in production.
+                  </p>
+
+                  <p>
+                    During the Gemini 3 Hackathon, I channeled this curiosity into building{" "}
+                    <a
+                      href="https://ducksy-gemini-3-hackathon-2026-duck.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline underline-offset-2 text-foreground font-medium hover:text-muted transition-colors"
+                    >
+                      Ducksy
                     </a>
-                    , specializing in web architecture, systems, and creative media.
+                    , an AI desktop companion built with Electron, Next.js, and the{" "}
+                    <a
+                      href="https://modelcontextprotocol.io/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline underline-offset-2 text-foreground font-medium hover:text-muted transition-colors"
+                    >
+                      Model Context Protocol
+                    </a>{" "}
+                    (MCP). Ducksy was designed to understand what you were working on, summarize live meetings, and proactively help without being prompted every five seconds. That project proved something crucial to me: the real value of machine intelligence isn&apos;t an isolated chat box; it&apos;s ambient context embedded directly into existing workflows.
                   </p>
 
                   <div className="relative w-full h-48 rounded-lg overflow-hidden border border-border bg-card">
                     <Image
                       src="/Ducksy.png"
-                      alt="Featured project preview"
+                      alt="Ducksy AI Companion preview"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 
                   <p>
-                    Currently leading teaching initiatives, creating technical
-                    content with{" "}
+                    Soon after, I wanted to push models out of the cloud and directly onto resource-constrained hardware. At the Microsoft x AIAT AI Engineering Hackathon, our team built an Edge AI care system for elderly monitoring. We had to squeeze computer vision models onto edge devices, balancing strict privacy, minimal power draw, and low latency.
+                  </p>
+
+                  <p>
+                    Seeing an inference model run locally to detect emergencies in real time showed me that AI isn&apos;t just a hype cycle. It is practical, high-leverage infrastructure that solves physical-world problems.
+                  </p>
+
+                  <div className="flex flex-row justify-center items-center gap-3">
+                    <img
+                      src="/aiat.jpg"
+                      alt="Microsoft x AIAT AI Engineering Hackathon"
+                      className="hover:scale-105 transition-transform duration-300 rounded-lg border border-border bg-card object-contain h-1/3 w-1/3"
+                    />
+                    <img
+                      src="/aiatpt.jpg"
+                      alt="Edge AI Elderly Care System"
+                      className="hover:scale-105 transition-transform duration-300 rounded-lg border border-border bg-card object-contain h-1/3 w-1/3"
+                    />
+                  </div>
+
+                  <p>
+                    Building things is only half the fun for me. The other half is taking everything apart and showing others how it works. That&apos;s where my high school creative roots circle back.
+                  </p>
+
+                  <p>
+                    Because I spent years learning editing, pacing, and visual communication, sharing tech came naturally. I began creating developer content with{" "}
                     <a
                       href="https://gdgbangkok.dev/"
                       target="_blank"
                       rel="noreferrer"
                       className="underline underline-offset-2 text-foreground font-medium hover:text-muted transition-colors"
                     >
-                      GDG Bangkok
+                      Google Developer Group Bangkok
                     </a>
-                    , and open-sourcing projects on{" "}
-                    <a
-                      href="https://github.com/SeanNachapat"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline underline-offset-2 text-foreground font-medium hover:text-muted transition-colors"
-                    >
-                      GitHub
-                    </a>
-                    .
+                    , deconstructing multi-model routing, developer tooling, and agentic workflows into digestible videos. At KMITL, I took on the role of Lead Teaching Assistant for our Computer Science Pre-Degree program, helping high school students wrap their heads around OOP and coding fundamentals.
+                  </p>
+
+                  <div className="flex flex-row justify-center items-center gap-3">
+                    <img
+                      src="/gdg.jpg"
+                      alt="Presenting at Google Developer Group Bangkok"
+                      className="hover:scale-105 transition-transform duration-300 rounded-lg border border-border bg-card object-contain h-2/3 w-2/3"
+                    />
+                  </div>
+
+                  <p>
+                    I&apos;ve learned to code by shipping projects, breaking home servers, reading documentation late at night, and learning from strangers on the internet who posted open-source repositories and detailed tutorials.
+                  </p>
+
+                  <p>
+                    Today, my focus is locked on where AI meets real-world software engineering: multi-agent orchestration, multimodal reasoning, and pragmatic edge deployment.
+                  </p>
+
+                  <p>
+                    I&apos;m excited to keep building, breaking things, and sharing the process out in the open.
                   </p>
                 </div>
               )}

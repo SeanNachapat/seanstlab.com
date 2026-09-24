@@ -54,7 +54,7 @@ export default function HomeClient({ blogs }: HomeClientProps) {
               {tldr ? (
                 <div className="space-y-3 animate-fadeIn">
                   <p>
-                    I'm Sean, a passionate developer, and a machine learning enthusiast. 
+                    I&apos;m Sean, a passionate developer, and a machine learning enthusiast. 
                     Currently, a 2nd year Computer Science student, researcher, and Teaching Assistance at KMITL.
                   </p>
                 </div>
@@ -380,12 +380,12 @@ export default function HomeClient({ blogs }: HomeClientProps) {
         </div>
 
         {/* Generative Modular Identity Cascade */}
-        <div className="flex flex-col items-center justify-start sticky top-0 -mt-8 h-fit">
+        <div className="flex flex-col items-end md:items-center justify-end md:justify-start relative md:sticky md:top-0 -mt-32 sm:-mt-40 md:-mt-8 -mb-4 md:mb-0 h-fit rotate-180 md:rotate-0 w-20 sm:w-28 md:w-full ml-auto md:ml-0">
           <GenerativeCascade
-            columns={6}
+            columns={9}
             rows={15}
             cellSize={100}
-            className=""
+            className="w-2/3"
           />
         </div>
       </div>

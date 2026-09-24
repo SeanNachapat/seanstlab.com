@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import GenerativeCascade from "@/components/GenerativeCascade";
 import {
   projects,
   reels,
@@ -376,6 +377,16 @@ export default function HomeClient({ blogs }: HomeClientProps) {
 
           {/* Footer & Socials */}
           <Footer />
+        </div>
+
+        {/* Generative Modular Identity Cascade */}
+        <div className="flex flex-col items-center justify-start sticky top-0 -mt-8 h-fit">
+          <GenerativeCascade
+            columns={6}
+            rows={15}
+            cellSize={100}
+            className=""
+          />
         </div>
       </div>
     </main>

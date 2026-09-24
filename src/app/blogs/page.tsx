@@ -32,17 +32,14 @@ export default function BlogCollectionPage() {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="p-5 rounded-lg border border-border bg-card/40 hover:border-foreground/30 transition-all group"
+              className="p-0.5 hover:border-foreground/30 transition-all group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 ">
                 <Link
                   href={`/blogs/${post.slug}`}
-                  className="font-semibold text-foreground text-base group-hover:underline underline-offset-2 flex items-center gap-1.5"
+                  className="font-semibold text-foreground text-base group-hover:underline underline-offset-2 flex items-center gap-1.5 hover:bg-card/40 rounded-lg"
                 >
                   {post.title}
-                  <span className="text-muted text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
-                    →
-                  </span>
                 </Link>
                 <div className="flex items-center gap-2 text-xs text-muted whitespace-nowrap">
                   {post.readTime && <span>{post.readTime}</span>}

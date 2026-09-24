@@ -1,23 +1,57 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, VT323 } from "next/font/google";
-import "./globals.css";
+import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import SmoothScroll from "@/components/SmoothScroll";
+import { siteConfig } from "@/data";
+import "./globals.css";
 
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-});
-
-const vt323 = VT323({
-  weight: "400",
-  variable: "--font-pixel",
-  subsets: ["latin"],
+const charisSIL = localFont({
+  src: [
+    { path: "../../public/fonts/CharisSIL-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/CharisSIL-Italic.woff2", weight: "400", style: "italic" },
+    { path: "../../public/fonts/CharisSIL-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../../public/fonts/CharisSIL-BoldItalic.woff2", weight: "700", style: "italic" },
+  ],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Seanstlab",
-  description: "Seanstlab by Nachapat I.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.author.github }],
+  creator: siteConfig.author.name,
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.title,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: siteConfig.author.twitter,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -25,13 +59,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  return ( 
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      </head>
       <body
-        className={`${jetbrainsMono.variable} ${vt323.variable} antialiased font-sans`}
+        className={`${charisSIL.variable} antialiased font-sans`}
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -40,6 +71,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SmoothScroll />
           {children}
         </ThemeProvider>
       </body>

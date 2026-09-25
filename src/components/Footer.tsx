@@ -32,7 +32,9 @@ export default function Footer({ className = "", showConnect = true }: FooterPro
     <footer className={`w-full font-mono ${className}`}>
       {showConnect && (
         <div className="flex flex-col gap-4 justify-between mt-4">
-          <p className="font-semibold text-foreground font-sans">Let&apos;s Connect</p>
+          <div className="flex flex-row items-center justify-between">
+            <p className="font-semibold text-foreground font-sans">Let&apos;s Connect</p>
+          </div>
           <div className="text-sm leading-relaxed text-foreground/90">
             <div className="space-y-4 animate-fadeIn">
               <p>

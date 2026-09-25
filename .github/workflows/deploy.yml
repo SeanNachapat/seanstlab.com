@@ -1,0 +1,40 @@
+name: Deploy with Docker to Cloudflare (Home Server)
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build & Deploy on Home Server
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy with Docker Compose
+        env:
+          TUNNEL_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
+        run: |
+          set -e
+          echo "🚀 Starting deployment on home server..."
+
+          # Detect Docker Compose command
+          if docker compose version >/dev/null 2>&1; then
+            COMPOSE_CMD="docker compose"
+          elif command -v docker-compose >/dev/null 2>&1; then
+            COMPOSE_CMD="docker-compose"
+          else
+            echo "❌ Error: Docker Compose is not installed or not in PATH."
+            exit 1
+          fi
+
+          echo "🔨 Building images and updating containers..."
+          $COMPOSE_CMD up -d --build --remove-orphans
+
+          echo "🧹 Cleaning up dangling Docker images..."
+          docker image prune -f
+
+          echo "✅ Successfully deployed to home server and running via Cloudflare Tunnel!"

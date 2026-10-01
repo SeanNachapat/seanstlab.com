@@ -7,6 +7,8 @@ tags: ["Welcome", "Introduction", "Engineering"]
 
 # Welcome to My Posts
 
+> **TL;DR:** This is my open digital notebook where I document full-stack engineering builds, project breakdowns, interface experiments, and takeaways from continuous learning.
+
 Welcome to my personal space on the web! Here I share thoughts, learnings, and deep dives into software engineering, minimalist interface design, creative projects, and technology.
 
 ## What to Expect

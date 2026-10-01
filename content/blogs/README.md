@@ -24,6 +24,8 @@ tags: ["Filmmaking", "Directing", "Video"]
 
 # The Doll Shop
 
+> **TL;DR:** A quick 1-2 sentence executive summary of key takeaways and findings from the post.
+
 Your content here...
 ```
 

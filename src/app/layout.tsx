@@ -48,6 +48,11 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
     creator: siteConfig.author.twitter,
   },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   robots: {
     index: true,
     follow: true,

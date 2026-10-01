@@ -7,11 +7,24 @@ tags: ["YouTube Shorts", "Short-Form Video", "AI Voice", "Audience Retention", "
 
 # Alteroptics: Reverse-Engineering YouTube Algorithms & Human Interaction
 
-> **TL;DR:** Alteroptics is an experimental faceless YouTube Shorts project powered by ElevenLabs voiceovers, designed to deconstruct digital content as pure statistics—reverse-engineering 3–5 second hook mechanics, audience retention curves, and algorithmic prediction models.
+> **TL;DR:** Alteroptics is an experimental faceless YouTube Shorts project created to deconstruct digital content as pure statistics. Crucially, the channel is **90% human-crafted** (research, scriptwriting, bespoke editing, and analytical modeling) with only **10% AI tooling** (ElevenLabs voiceover synthesis and structural script audits).
 
 **Alteroptics** is an empirical research experiment disguised as a faceless short-form YouTube channel. 
 
-Instead of treating short-form content creation purely as creative intuition, Alteroptics approaches video production as a systematic engineering problem: isolating variables, reverse-engineering Shorts feed recommendation systems, and modeling rapid human interaction dynamics at scale.
+Instead of treating short-form content creation purely as creative intuition or falling into generic automated "AI slop," Alteroptics approaches video production as a systematic engineering discipline: isolating variables, reverse-engineering Shorts feed recommendation systems, and modeling rapid human interaction dynamics at scale.
+
+---
+
+## The 90/10 Principle: Human-Crafted, AI-Instrumented
+
+A common misconception with faceless channels is assuming they are mass-produced by automated AI pipelines. Alteroptics operates on the exact opposite principle:
+
+| Domain | Allocation | Role & Execution |
+| :--- | :--- | :--- |
+| **Human Engineering** | **90%** | Topic research, original narrative architecture, micro-pacing, visual asset curation, manual motion editing, sound design, and telemetry deconstruction. |
+| **AI Tooling** | **10%** | **ElevenLabs** synthetic voiceover (to eliminate individual voice bias) and algorithmic script audits for pacing and readability. |
+
+AI is treated strictly as an **instrument of control**—a consistent, measurable audio output—while the creative intelligence, emotional cadence, and psychological retention hooks remain entirely human-driven.
 
 ---
 

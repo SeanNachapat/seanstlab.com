@@ -2,6 +2,16 @@
 
 import { useState, useEffect } from "react";
 
+interface VisitorInfo {
+  totalVisitors: number;
+  previousVisitor?: {
+    city?: string;
+    country?: string;
+    formatted: string;
+    flag?: string;
+  };
+}
+
 interface FooterProps {
   className?: string;
   showConnect?: boolean;
@@ -9,6 +19,7 @@ interface FooterProps {
 
 export default function Footer({ className = "", showConnect = true }: FooterProps) {
   const [time, setTime] = useState<string>("");
+  const [visitorInfo, setVisitorInfo] = useState<VisitorInfo | null>(null);
 
   useEffect(() => {
     const updateTime = () => {
@@ -26,6 +37,30 @@ export default function Footer({ className = "", showConnect = true }: FooterPro
     updateTime();
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function fetchVisitorStats() {
+      try {
+        const res = await fetch("/api/visitors");
+        if (res.ok) {
+          const data = await res.json();
+          if (isMounted) {
+            setVisitorInfo(data);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load visitor stats:", err);
+      }
+    }
+
+    fetchVisitorStats();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (
@@ -80,9 +115,16 @@ export default function Footer({ className = "", showConnect = true }: FooterPro
       )}
 
       {/* Time & Location */}
-      <div className="text-muted flex flex-row gap-9 my-10 text-xs">
+      <div className="text-muted flex flex-row gap-9 mt-10 text-xs">
         <p>Bangkok, Thailand</p>
         <p>{time ? `${time} GMT+7` : "--:--:-- GMT+7"}</p>
+        <span>
+            visitor{" "}
+            <span className="text-foreground">
+              {visitorInfo ? `#${visitorInfo.totalVisitors.toLocaleString()}` : "#..."}
+            </span>
+          </span>
+          
       </div>
     </footer>
   );

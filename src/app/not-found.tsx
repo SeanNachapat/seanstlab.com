@@ -8,9 +8,9 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <main className="relative min-h-screen flex flex-col p-8 font-mono justify-between overflow-x-clip">
+    <main className="min-h-screen flex flex-col p-8 font-mono justify-between">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
-        <div className="max-w-xl relative z-10 flex flex-col justify-center space-y-6 pt-10 md:pt-20">
+        <div className="max-w-xl flex flex-col justify-center space-y-6 pt-10 md:pt-20">
           <div>
             <Link
               href="/"
@@ -55,17 +55,17 @@ export default function NotFound() {
         </div>
 
         {/* Generative Modular Identity Cascade */}
-        <div className="fixed bottom-0 right-0 z-0 pointer-events-none opacity-15 w-72 sm:w-96 rotate-180 flex flex-col items-end justify-end md:sticky md:top-0 md:bottom-auto md:right-auto md:z-auto md:pointer-events-auto md:opacity-100 md:w-full md:rotate-0 md:items-center md:justify-start md:-mt-8 h-fit">
+        <div className="flex flex-col items-end md:items-center justify-end md:justify-start relative md:sticky md:top-0 -mt-20 md:-mt-8 h-fit rotate-180 md:rotate-0 w-24 sm:w-32 md:w-full ml-auto md:ml-0">
           <GenerativeCascade
             columns={9}
             rows={15}
             cellSize={100}
-            className="w-full md:w-2/3"
+            className="w-2/3"
           />
         </div>
       </div>
 
-      <div className="relative z-10 max-w-5xl w-full mx-auto mt-12">
+      <div className="max-w-5xl w-full mx-auto mt-12">
         <Footer />
       </div>
     </main>

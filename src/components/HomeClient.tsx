@@ -23,9 +23,9 @@ export default function HomeClient({ blogs }: HomeClientProps) {
   const [visibleReels, setVisibleReels] = useState(INITIAL_ITEMS);
 
   return (
-    <main className="min-h-screen flex flex-col p-8 font-mono">
+    <main className="relative min-h-screen flex flex-col p-8 font-mono overflow-x-clip">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-        <div className="max-w-xl">
+        <div className="max-w-xl relative z-10">
           <h1 className="font-pixel font-bold text-4xl sm:text-3xl tracking-tight text-foreground">
             @Seanst._
           </h1>
@@ -380,12 +380,12 @@ export default function HomeClient({ blogs }: HomeClientProps) {
         </div>
 
         {/* Generative Modular Identity Cascade */}
-        <div className="flex flex-col items-end md:items-center justify-end md:justify-start relative md:sticky md:top-0 -mt-32 sm:-mt-40 md:-mt-8 -mb-4 md:mb-0 h-fit rotate-180 md:rotate-0 w-20 sm:w-28 md:w-full ml-auto md:ml-0">
+        <div className="fixed bottom-0 right-0 z-0 pointer-events-none opacity-15 w-72 sm:w-96 rotate-180 flex flex-col items-end justify-end md:sticky md:top-0 md:bottom-auto md:right-auto md:z-auto md:pointer-events-auto md:opacity-100 md:w-full md:rotate-0 md:items-center md:justify-start md:-mt-8 md:mb-0 h-fit">
           <GenerativeCascade
             columns={9}
             rows={15}
             cellSize={100}
-            className="w-2/3"
+            className="w-full md:w-2/3"
           />
         </div>
       </div>
